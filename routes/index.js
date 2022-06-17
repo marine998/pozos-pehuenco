@@ -17,10 +17,6 @@ router.get('/quotes.html', (req, res) => {
     res.render('quotes.html');
 });
 
-// router.get('/MyProjects.html', (req, res) => {
-//     res.render('MyProjects.html');
-// });
-
 router.get('/ChgPassword.html', (req, res) => {
     res.render('ChgPassword.html');
 });
@@ -31,6 +27,10 @@ router.get('/About.html', (req, res) => {
 
 router.get('/Partners.html', (req, res) => {
     res.render('Partners.html');
+});
+
+router.get('/Myprojects.html', (req, res) => {
+    res.render('Myprojects.html');
 });
 
 
