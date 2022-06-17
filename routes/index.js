@@ -17,9 +17,9 @@ router.get('/quotes.html', (req, res) => {
     res.render('quotes.html');
 });
 
-router.get('/MyProjects.html', (req, res) => {
-    res.render('MyProjects.html');
-});
+// router.get('/MyProjects.html', (req, res) => {
+//     res.render('MyProjects.html');
+// });
 
 router.get('/ChgPassword.html', (req, res) => {
     res.render('ChgPassword.html');
