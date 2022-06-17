@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+    <div class="topnav">
+        <div>
+            <h1>Pozos Pehuenco</h1>
+        </div>
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label for="menu__toggle" class="menu__btn">
+                <span></span>
+            </label>
+            <ul class="menu__box">
+                <li><a class="menu__item" href="Home.html">Inicio</a></li>
+                <li><a class="menu__item" href="Profile.html">Perfil</a></li>
+                <li><a class="menu__item" href="quotes.html">Cotizaciones</a></li>
+                <li><a class="menu__item" href="Myprojects.html">Mis Proyectos</a></li>
+                <li class="menu-login">
+                    <ul>
+                        <li>
+                            <button onclick="document.getElementById('id01').style.display='block'">Login</button>
+                        </li>
+                        <li>
+                            <button onclick="document.getElementById('id02').style.display='block'">Registrate</button>
+                        </li>
+                    </ul>
+                    
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="id01" class="modal">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close"
+            title="Close Modal">&times;</span>
+
+        <!-- CONTENIDO DEL MODAL-->
+        <form class="modal-content animate" action="/action_page.php">
+            <div class="container">
+                <ul>
+                    <li>
+                        <label for="uname">Usuario</label>
+                        <input type="text" name="usame requiered" placeholder="Ingrese usuario">
+                    </li>
+                    <li>
+                        <label for="psw">Contraseña</label>
+                        <input type="password" name="psw" placeholder="Ingrese contraseña">
+                    </li>
+                    <li class="remember-li">  
+                        <div>
+                            <label for="remember" class="remember-lbl">Recuérdame</label>
+                            <input type="checkbox" checked="checked" name="remember" class="remember-chk">
+                        </div>     
+                        <div>
+                            <span class="psw">¿Olvidaste <a href="#">tu contraseña</a>?</span>
+                        </div>
+                    </li>
+                    <li class="botones-li">
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                        class="cancelbtn">Cancelar</button>
+                        <button type="submit" class="iniciabtn">Iniciar Sesión</button>
+                    </li>
+                </ul>                
+            </div>
+
+            <div class="container">
+                
+            </div>
+        </form>
+    </div>
+    <div id="id02" class="modal">
+        <span onclick="document.getElementById('id02').style.display='none'" class="close"
+            title="Close Modal">&times;</span>
+
+        <!-- CONTENIDO DEL MODAL-->
+        <form class="modal-content animate" action="/action_page.php">
+            <div class="container">
+                <ul>
+                    <li>
+                        <label for="uname">Usuario</label>
+                        <input type="text" name="usame requiered" placeholder="Ingrese usuario">
+                    </li>
+                    <li>
+                        <label for="psw">Contraseña</label>
+                        <input type="password" name="psw" placeholder="Ingrese contraseña">
+                    </li>
+                    <li class="remember-li">
+                        <div>
+                            <label for="remember" class="remember-lbl">Recuérdame</label>
+                            <input type="checkbox" checked="checked" name="remember" class="remember-chk">
+                        </div>
+                    </li>
+                    <li class="botones-li">
+                        <button type="button" onclick="document.getElementById('id02').style.display='none'"
+                    class="cancelbtn">Cancelar</button>
+                        <button type="submit" class="iniciabtn">Iniciar Sesión</button>
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </div>
+
+    <%-include('partials/Footer.html');-%>
+
+    <script type = "text/javascript" src = "/js/uwu.js">
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>

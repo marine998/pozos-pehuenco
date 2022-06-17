@@ -1,0 +1,970 @@
+body {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1em 0 2em 0;
+    padding: 0 2em;
+}
+
+.row-profile {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+.topnav {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    background-color: #0d6278;
+    padding: 0 20px;
+}
+
+/* Menu Hamburguesa*/
+
+.hamburger-menu {
+    display: flex;
+    position: absolute;
+    right: 0;
+    width: 320px;
+    justify-content: flex-end;
+}
+
+#menu__toggle {
+    opacity: 0;
+    position: relative;
+}
+
+#menu__toggle:checked + .menu__btn > span {
+    transform: rotate(45deg);
+}
+
+#menu__toggle:checked + .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0deg);
+}
+
+#menu__toggle:checked + .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+#menu__toggle:checked ~ .menu__box {
+    display: flex;
+    opacity: 1 !important;
+}
+
+#menu__toggle:checked ~ .menu__btn {
+    right: -15.5em;
+}
+
+.menu__btn {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    top: 28px;
+    right: 1.5em;
+    width: 38px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 12;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 26px;
+    height: 2px;
+    background-color: #ffffff;
+    transition-duration: .25s;
+}
+
+.menu__btn > span::before {
+    content: '';
+    top: -8px;
+}
+
+.menu__btn > span::after {
+    content: '';
+    top: 8px;
+}
+
+.menu__box {
+    display: none;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    position: relative;
+    top: 0;
+    right: 0%;
+    opacity: 0;
+    width: 300px;
+    height: 100vh;
+    margin: 0;
+    padding: 48px 0 20px 0;
+    list-style: none;
+    background-color: #0d6378ed;
+    box-shadow: -10px 1px 50px -5px rgba(0, 0, 0, 0.60);
+    transition-duration: .25s;
+    z-index: 10;
+}
+
+.menu__box li {
+    width: 100%;
+    padding: 12px 24px;
+    height: 48px;
+    margin: 0;
+}
+
+.menu__box li:hover {
+    background-color: #0a4b5c;
+    transition-duration: .1s;
+}
+
+.menu__box li:last-of-type {
+    background: transparent;
+    transition: none;
+}
+
+.menu__box li.menu-login {
+    border-top: 1px solid #fff;
+    padding: 1.5em 0 0 0;
+    margin: 1em 1.5em;
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+.menu__box li.menu-login ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.menu__box li.menu-login ul li {
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0 0 1em 0;
+}
+
+.menu__box li.menu-login ul li:hover {
+    background-color: transparent;
+    transition: none;
+}
+
+.menu__box li.menu-login ul li button {
+    width: 100%;
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+    background: transparent;
+    color: #ffffff;
+    padding: 0.4em;
+    margin: 0;
+}
+
+.menu__box li.menu-login ul li button:hover {
+    background-color: #0a4b5c;
+}
+
+.login-menu {
+    display: flex;
+    color: #ffffff;
+    width: 100%;
+    height: auto;
+    border-top: 1px solid #ffffff;
+    padding: 10px 0 0 0;
+}
+
+.menu__item {
+    display: block;
+    padding: 0;
+    color: #ffffff;
+    font-family: 'roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition-duration: .25s;
+}
+
+.menu__item:hover {
+    color: #ffffff;
+    cursor: pointer;
+    transition-duration: 0;
+}
+
+/* Termino del menu burger*/
+
+/* MODAL (BACKGROUND) */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 20;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(5px);
+    padding-top: 60px;
+}
+
+/* Contenido Modal*/
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 2% auto;
+    border: 1px solid #888;
+    max-width: 500px;
+    height: auto;
+    padding: 1.5em 1.5em 0.5em 1.5em;
+    border-radius: 15px;
+    box-shadow: 0px 10px 40px -5px rgba(0,0,0,0.75);
+}
+
+.modal-content .container {
+    padding: 0;
+}
+
+.modal-content .container ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.modal-content .container ul li {
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.modal-content .container ul li label {
+    display: flex;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.modal-content .container ul li input {
+    display: flex;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #063a47;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 0.5em;
+    padding: 5px 10px;
+}
+
+.modal-content .container ul li button {
+    background-color: #0d6278;
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    padding: 5px 15px;
+    width: auto;
+    margin: 0 13.9em 0 0;
+    text-align: center;
+}
+
+.modal-content .container ul li button:hover {
+    background-color: #063a47;
+}
+
+.modal-content .container ul li.remember-li {
+    display: inline-flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.modal-content .container ul li.remember-li div {
+    width: 50%;
+    justify-content: flex-start;
+    display: flex;
+}
+
+.modal-content .container ul li.remember-li div .remember-lbl {
+    width: auto;
+    font-weight: 400;
+    margin-right: 0.5em;
+}
+
+.modal-content .container ul li.remember-li div .remember-chk {
+    width: auto;
+    zoom: 1.8;
+    margin-top: 0.1em;
+}
+
+.modal-content .container ul li.remember-li div span {
+    width: 100%;
+    text-align: right;
+}
+
+.modal-content .container ul li.botones-li {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+    border-top: 1px solid #717171;
+    padding: 2em 0 0 0;
+    margin-top: 1em;
+}
+
+.modal-content .container ul li.botones-li button {
+    min-width: 150px;
+    margin: 0;
+    text-align: center;
+    justify-content: center;
+}
+
+.modal-content .container ul li.botones-li button.iniciabtn {
+    width: 150px;
+    text-align: center;
+}
+
+.modal-content .container ul li.botones-li button.cancelbtn {
+    width: 150px;
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px solid #0d6278;
+    color: #0d6278;
+}
+
+.modal-content .container ul li.botones-li button.cancelbtn:hover {
+    background-color: #b4e6f3;
+}
+
+.rmb {
+    margin-left: 5%;
+    margin: none;
+}
+
+.uname {
+    display: flex;
+}
+
+.btn-mdl {
+    display: flex;
+    margin-top: 5%;
+}
+
+.btn-login{
+    background-color: #a1a1ff8c;
+    width: 70%;
+    color: black;
+    border-radius: 30px;
+    border-color: transparent;
+}
+
+.cancelbtn {
+    display: flex;
+    margin-top: 5%;
+}
+
+/* Boton de cerrar */
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+/* Cerrar boton hover */
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    color: #000;
+    font-size: 36px;
+    font-weight: bold;
+    background-color: #fff;
+    border-radius: 50px;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    line-height: 28px;
+    text-align: center;
+    box-shadow: 0px 0px 15px 0px #00000099;
+    z-index: 22;
+}
+
+/* Cerrar boton hover */
+
+.close:hover,
+.close:focus {
+    background-color: #ff0000;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* animacion zoom*/
+
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s;
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-animation: scale(0);}
+    to {-webkit-animation: scale(1);}
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+  }
+
+/* FIN MODAL */
+
+/* Slideshow container */
+
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+/* Esconder las fotos */
+
+.mySlides {
+    display: none;
+}
+
+
+.fade:not(.show) {
+    opacity: 1 !important;
+}
+
+/* boton siguiente y anterior */
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* posicion de los botones siguentes */
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* En Hover, anade negro como fondo */
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Texto */
+
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Numero de texto */
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* Los puntos */
+
+.box-dot {
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 3em;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+/* animacion fading */
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+
+@media only screen and (max-width: 300px) {
+    .prev,
+    .next,
+    .text {font-size: 11px;}
+}
+
+
+/* IMAGENES */
+
+.image {
+    border-radius: 8px;
+    width: 70%;
+    height: 20%;
+}
+
+.img-about {
+    max-width: 100%;
+    margin-top: 15px;
+}
+
+.img {
+    padding: 10px;
+    width: 100%;
+    height: 20%;
+}
+
+.img:hover {
+    opacity: 0.6;
+    transition-delay: 0.10s;
+}
+
+.row::after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
+.card-menu {
+    background-color: #0d6378c5;
+    border-radius: 5px;
+    border: 2px solid #0d637857;
+    width: 100%;
+    padding: 20px;
+}
+
+.card-menu:first-of-type  {
+    margin-bottom: 2em;
+}
+
+.card-menu-client {
+    background-color: #0d6378c5;
+    border-right: 2px solid #0d637857;
+    width: 100%;
+    padding: 0 110px 0 13%;
+    padding-top: 273px;
+    height: 94vh;
+}
+
+.card-menu-profile {
+    background-color: #03a9f42e;
+    width: 100%;
+    padding: 20px;
+    padding-top: 273px;
+    height: 94vh;
+}
+
+.menu-profile {
+    list-style-type: none;
+    padding-left: 35%;
+
+}
+
+.menu-profile ul.profile-list li {
+    border-radius: 4px;
+}
+
+.left-column {
+    max-width: 65%;
+    margin: 0 2em 0 0;
+    padding: 0;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.left-column-client {
+    display: flex;
+    max-width: 27.2%;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    border-radius: 0;
+}
+
+.right-profile {
+    background-color: #76aacd8c;
+    display: flex;
+    max-width: 100%;
+    width: 72.8%;
+    height: 94vh;
+    padding: 8.5em 20em 0px 20em;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.right-profile .container {
+    padding: 0;
+}
+
+.right-profile .container ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.right-profile .container ul li {
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.right-profile .container ul li label {
+    display: flex;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.right-profile .container ul li input {
+    display: flex;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #063a47;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 0.5em;
+    padding: 5px 10px;
+}
+
+.right-profile .container ul li button {
+    background-color: #0d6278;
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    padding: 5px 15px;
+    width: 500px;
+    margin: 52px 0% 0 17%;
+    text-align: center;
+}
+
+.right-profile .container ul li button:hover {
+    background-color: #063a47;
+}
+
+.right-column {
+    display: flex;
+    max-width: 33.2%;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.card-right {
+    background-color: #0d6378c5;
+    border-radius: 5px;
+    border: 2px solid #0d637857;
+    width: 100%;
+    padding: 20px;
+}
+
+.card-right:first-of-type  {
+    margin-bottom: 2em;
+}
+
+.card {
+    background-color: #0d627842;
+    border: 2px solid #0d62781a;
+    border-radius: 3px;
+    margin: 10px;
+    width: 99%;
+    padding: 5px;
+}
+
+.card.texto {
+    padding: 20px 160px;
+}
+
+.card-psw {
+    background-color: #0d627842;
+    border: 2px solid #0d62781a;
+    border-radius: 3px;
+    margin-left: 20%;
+    margin-top: 50px;
+    width: 60%;
+    height: 60%;
+    padding: 5px;
+}
+
+.card-chpsw {
+    max-width: 60%;
+}
+
+.menu__client {
+    border-bottom: 1px solid white;
+    display: block;
+    padding: 50px 0 0 0;
+    color: #ffffff;
+    font-family: 'roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition-duration: .25s;
+}
+
+.pws-list {
+    display: flex;
+    padding: 5px;
+}
+
+
+ul {
+    list-style-type: none;
+}
+
+/* TITULOS */
+
+h1 {
+    color: #ffffff;
+}
+
+h2 {
+    color: #ffffff;
+    font-weight: bold;
+}
+.h1-psw {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+.about {
+    color: #000;
+    text-align:center;
+    font-weight: bold;
+    margin-top: 5%;
+}
+
+.blc-h2 {
+    margin-top: 10px;
+    color: #000;
+    text-align: center;
+}
+
+.about-text {
+    text-align: justify;
+}
+/* Tarjetas en socios*/
+
+/* Tres columnas lado a lado*/
+
+.column {
+    float: left;
+    width: 33%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+}
+
+/* Muestra las columnas una abajo de otra en pantallas pequenas*/
+
+@media screen and (max-width: 650px) {
+    .column {
+        width: 100%;
+        display: block;
+    }
+}
+
+/* Efectos a las tarjetas*/
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    padding: 0;
+}
+
+/* Limpia el flotar*/
+
+.container::after, .row::after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
+.title {
+    color: grey;
+}
+
+.button {
+    border: none;
+    border-radius: 30px;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: #ffffff;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+/* Footer */
+
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2em;
+    text-align: center;
+    background-color: #0d6278;
+    margin-top: 5px;
+    color: #ffffff;
+    width: 100%;
+}
+
+.footer-right {
+    display: flex;
+    width: 35%;
+    justify-content: flex-start;
+    margin: 0 3em 0 0;
+    border-right: 1px solid #ffffff;
+    padding: 0 3em 0 0;
+}
+
+.footer-right .map {
+    border-radius: 4px;
+    height: 310px;
+    width: 100%;
+    border: 5px solid rgba(0, 0, 0, 0.288);
+}
+
+.footer-right .map iframe {
+    width: 100%;
+}
+
+.footer-left {
+    display: flex;
+    width:calc(65% - 6em);
+    justify-content: flex-start;
+}
+
+.footer-left .contacto {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
+}
+.footer-left .contacto h4 {
+    width: 100%;
+    height: 24px;
+    line-height: 24px;
+    margin: 0;
+}
+
+.footer-left .contacto ul {
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-left .contacto ul li {
+    width: 20%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+}
+
+.footer-left .contacto ul li p {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.footer-left .contacto ul li a {
+    width: 64px;
+}
+
+.footer-left .contacto ul li .rs-icon {
+    width: 100%;
+}
+
+.footer-left .contacto ul li .rs-icon:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.footer-full {
+    display: flex;
+    width: 100%;
+    margin-top: 2em;
+    align-content: center;
+    justify-content: center;
+    border-top: 1px solid #ffffff;
+    padding-top: 2em;
+}
+
+.footer-full p {
+    font-size: 18px;
+    font-weight: normal;
+    width: 100%;
+    margin: 0;
+}
