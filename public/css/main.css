@@ -657,6 +657,7 @@ body {
     padding: 8.5em 20em 0px 20em;
     justify-content: center;
     flex-wrap: wrap;
+    margin: 0;
 }
 
 .right-profile .container {
@@ -946,10 +947,12 @@ h2 {
 }
 
 .qts-content .box-qts ul li label {
-    display: flex;
-    width: 100%;
+    display: block;
+    width: 90%;
     font-size: 16px;
     font-weight: 700;
+    float: left;
+    margin-bottom: 0.5em;
 }
 
 .qts-content .box-qts ul li input {
@@ -970,6 +973,20 @@ select {
     border-radius: 10px;
     border: 1px solid #063a47;
     margin-top: 0.5em;
+}
+
+input[type="radio"] {
+    display: block;
+    width: auto;
+    border-radius: 10px;
+    border: 1px solid #063a47;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+    padding: 5px 10px;
+    zoom: 1.8;
+    float: right;
+    clear: both;
 }
 
 .qts-content .box-qts ul li button {
@@ -1041,7 +1058,6 @@ input.input {
     padding: 2em;
     text-align: center;
     background-color: #0d6278;
-    margin-top: 5px;
     color: #ffffff;
     width: 100%;
 }
