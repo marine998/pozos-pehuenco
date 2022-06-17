@@ -33,5 +33,24 @@ router.get('/Myprojects.html', (req, res) => {
     res.render('Myprojects.html');
 });
 
+router.get('/AdmLogin.html', (req, res) => {
+    res.render('AdmLogin.html');
+});
+
+router.get('/AdmMenu.html', (req, res) => {
+    res.render('AdmMenu.html');
+});
+
+router.get('/AdmPartners.html', (req, res) => {
+    res.render('AdmPartners.html');
+});
+
+router.get('/AdmProjects.html', (req, res) => {
+    res.render('AdmProjects.html');
+});
+
+router.get('/AdmPublications.html', (req, res) => {
+    res.render('AdmPublications.html');
+});
 
 module.exports = router;
