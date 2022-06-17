@@ -637,6 +637,17 @@ body {
     border-radius: 0;
 }
 
+.right-projects {
+    background-color: #76aacd8c;
+    display: flex;
+    max-width: 100%;
+    width: 72.8%;
+    height: 94vh;
+    padding: 8.5em 5em 5em 5em;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .right-profile {
     background-color: #76aacd8c;
     display: flex;
@@ -803,6 +814,8 @@ h2 {
 .about-text {
     text-align: justify;
 }
+
+
 /* Tarjetas en socios*/
 
 /* Tres columnas lado a lado*/
@@ -860,6 +873,155 @@ h2 {
 
 .button:hover {
     background-color: #555;
+}
+
+/* PROJECTS */
+
+.column.projects {
+    float: left;
+    width: 20%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+}
+
+.card.projects {
+    background-color: #ffffffa9;
+    border: 2px solid #0d62781a;
+    border-radius: 3px;
+    margin: 10px;
+    width: 99%;
+    padding: 5px;
+}
+
+.card.projects img {
+    height: 200px;
+    width: 200px;
+}
+
+.card.projects p {
+    text-align: center;
+    list-style-type: none;
+}
+
+/*  COTIZACIONES    */
+
+.quotes {
+    background-color: #76aacd8c;
+    display: flex;
+    max-width: 100%;
+    width: 100%;
+    height: 94vh;
+    padding: 8.5em 5em 5em 5em;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.qts-content {
+    background-color: #fefefe;
+    margin: 2% auto;
+    border: 1px solid #888;
+    max-width: 500px;
+    height: auto;
+    padding: 1.5em 1.5em 0.5em 1.5em;
+    border-radius: 15px;
+    box-shadow: 0px 10px 40px -5px rgba(0, 0, 0, 0.75);
+}
+
+.qts-content .box-qts {
+    padding: 0;
+}
+
+.qts-content .box-qts ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.qts-content .box-qts ul li {
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.qts-content .box-qts ul li label {
+    display: flex;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.qts-content .box-qts ul li input {
+    display: flex;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #063a47;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 0.5em;
+    padding: 5px 10px;
+}
+
+.qts-content .box-qts ul li button {
+    background-color: #0d6278;
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    padding: 5px 15px;
+    width: auto;
+    margin: 0 13.9em 0 0;
+    text-align: center;
+}
+
+.qts-content .box-qts ul li button:hover {
+    background-color: #063a47;
+}
+
+.qts-content .box-qts ul li.botones-li {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+    border-top: 1px solid #717171;
+    padding: 2em 0 0 0;
+    margin-top: 1em;
+}
+
+.qts-content .box-qts ul li.botones-li button {
+    min-width: 150px;
+    margin: 0;
+    text-align: center;
+    justify-content: center;
+}
+
+.qts-content .box-qts ul li.botones-li button.cancelbtn {
+    width: 150px;
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px solid #0d6278;
+    color: #0d6278;
+}
+
+.qts-content .box-qts ul li.botones-li button.cancelbtn:hover {
+    background-color: #b4e6f3;
+}
+
+
+legend {
+    color: #000000;
+    padding: 3px 6px;
+}
+
+input.input {
+    margin: .4rem;
+}
+
+.qts {
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid #000;
+    padding: 25px;
 }
 
 /* Footer */

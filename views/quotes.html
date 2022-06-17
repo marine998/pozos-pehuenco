@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/main.css">
 </head>
+
 <body>
 
     <div class="topnav">
@@ -33,7 +35,7 @@
                             <button onclick="document.getElementById('id02').style.display='block'">Registrate</button>
                         </li>
                     </ul>
-                    
+
                 </li>
             </ul>
         </div>
@@ -54,25 +56,21 @@
                         <label for="psw">Contraseña</label>
                         <input type="password" name="psw" placeholder="Ingrese contraseña">
                     </li>
-                    <li class="remember-li">  
+                    <li class="remember-li">
                         <div>
                             <label for="remember" class="remember-lbl">Recuérdame</label>
                             <input type="checkbox" checked="checked" name="remember" class="remember-chk">
-                        </div>     
+                        </div>
                         <div>
                             <span class="psw">¿Olvidaste <a href="#">tu contraseña</a>?</span>
                         </div>
                     </li>
                     <li class="botones-li">
                         <button type="button" onclick="document.getElementById('id01').style.display='none'"
-                        class="cancelbtn">Cancelar</button>
+                            class="cancelbtn">Cancelar</button>
                         <button type="submit" class="iniciabtn">Iniciar Sesión</button>
                     </li>
-                </ul>                
-            </div>
-
-            <div class="container">
-                
+                </ul>
             </div>
         </form>
     </div>
@@ -80,37 +78,143 @@
         <span onclick="document.getElementById('id02').style.display='none'" class="close"
             title="Close Modal">&times;</span>
 
-        <!-- CONTENIDO DEL MODAL-->
+        <!-- CONTENIDO DEL MODAL REGISTRO -->
         <form class="modal-content animate" action="/action_page.php">
             <div class="container">
                 <ul>
                     <li>
-                        <label for="uname">Usuario</label>
-                        <input type="text" name="usame requiered" placeholder="Ingrese usuario">
+                        <label for="uname">Ingrese su nombre</label>
+                        <input type="text" name="usame requiered" placeholder="Ingrese nombre">
                     </li>
                     <li>
-                        <label for="psw">Contraseña</label>
+                        <label for="lname">Ingrese su apellido</label>
+                        <input type="text" name="lname requiered" placeholder="Ingrese apellido">
+                    </li>
+                    <li>
+                        <label for="psw">Ingrese su contraseña</label>
                         <input type="password" name="psw" placeholder="Ingrese contraseña">
                     </li>
-                    <li class="remember-li">
-                        <div>
-                            <label for="remember" class="remember-lbl">Recuérdame</label>
-                            <input type="checkbox" checked="checked" name="remember" class="remember-chk">
-                        </div>
+                    <li>
+                        <label for="psw">Repita su contraseña</label>
+                        <input type="password" name="psw" placeholder="Repita contraseña">
                     </li>
+                    <li>
+                        <label for="mail">Ingrese su Email</label>
+                        <input type="text" name="mail requiered" placeholder="Ingrese mail">
+                    </li>
+                    <li>
+                        <label for="phone">Ingrese su numero de Telefono</label>
+                        <input type="text" name="phone requiered" placeholder="Ingrese su numero">
+                    </li>
+                    <li>
+                        <label for="dir">Ingrese su direccion</label>
+                        <input type="text" name="dir requiered" placeholder="Ingrese su direccion">
+                    </li>
+
                     <li class="botones-li">
                         <button type="button" onclick="document.getElementById('id02').style.display='none'"
-                    class="cancelbtn">Cancelar</button>
-                        <button type="submit" class="iniciabtn">Iniciar Sesión</button>
+                            class="cancelbtn">Cancelar</button>
+                        <button type="submit" class="iniciabtn">Registrarse</button>
                     </li>
                 </ul>
             </div>
         </form>
     </div>
 
-    <%-include('partials/Footer.html');-%>
+    <div class="quotes">
+        <form class="qts-content">
+            <div>
+                <h2 class="qts">Cotizaciones</h2>
+            </div>
+            <div class="box-qts">
+                <ul>
+                    <li>
+                        <label for="">Estudio de la zona: $46.990</label>
+                    </li>
+                    <li>
+                        <label for="">Mano de obra: $8.000/hr</label>
+                    </li>
+                    <li class="input">
+                        <fieldset>
+                            <legend>Elija que decea instalar</legend>
 
-    <script type = "text/javascript" src = "/js/uwu.js">
+                            <input type="radio" id="basic" name="install">
+                            <label for="basic">Instalacion basica</label>
+
+                            <input type="radio" id="advance" name="install">
+                            <label for="advance">Instalacion Avanzada</label>
+
+                            <input type="radio" id="update" name="install">
+                            <label for="update">Actualizacion</label>
+                        </fieldset>
+                    </li>
+                    <li>
+                        <label for="city-select">Elija su punto mas cercano:</label>
+                        <select id="city-select">
+                            <optgroup label="--Por favor elija su punto mas cercano--">
+                                <option value="carahue">Carahue: $27.000</option>
+                                <option value="cunco">Cunco: $7.500</option>
+                                <option value="curarrehue">Curarrehue: $5.000</option>
+                                <option value="freire">Freire: $4.000</option>
+                                <option value="loncoche">Loncoche: $5.000</option>
+                                <option value="melipeuco">Melipeuco: $14.000</option>
+                                <option value="pucon">Pucon: $10.000</option>
+                                <option value="quepe">Quepe: $5.000</option>
+                                <option value="temuco">Temuco: $8.000</option>
+                                <option value="tolten">Tolten: $24.000</option>
+                                <option value="villarrica">Villarrica: $10.000</option>
+                            </optgroup>
+                        </select>
+                    </li>
+                    <li class="botones-li">
+                        <button type="button" onclick="document.getElementById('id02').style.display='none'"
+                            class="qtsbtn">Generar cotizacion</button>
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="footer">
+        <div class="footer-right">
+            <div class="map" id="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12352.200385644215!2d-72.23857895424698!3d-39.28711441428641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9614623c8e00fe6f%3A0xe7812f04b9706fcc!2sVillarrica%2C%20Araucania!5e0!3m2!1sen!2scl!4v1654918726427!5m2!1sen!2scl"
+                    width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <div class="footer-left">
+            <div class="contacto">
+                <h4>Contactanos en nuestras redes sociales</h4>
+                <ul>
+                    <li>
+                        <p>Facebook</p>
+                        <a href="http://www.facebook.com/">
+                            <img src="/logos/PngItem_5134688.png" alt="facebook" class="rs-icon">
+                        </a>
+                    </li>
+                    <li>
+                        <p>Whatsapp</p>
+                        <a href="https://www.whatsapp.com/">
+                            <img src="/logos/PngItem_1139665.png" alt="whatsapp" class="rs-icon">
+                        </a>
+                    </li>
+                    <li>
+                        <p>Twitter</p>
+                        <a href="https://www.twitter.com/">
+                            <img src="/logos/PngItem_4834.png" alt="twitter" class="rs-icon">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-full">
+            <p>Copyright 2022 Pozos Pehuenco</p>
+        </div>
+    </div>
+    <script type="text/javascript" src="/js/uwu.js">
 
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"

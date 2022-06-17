@@ -12,7 +12,7 @@ body {
     background-color: #0d6278;
     padding: 0 20px;
 }
- 
+
 .exit {
     display: flex;
     position: absolute;
@@ -76,7 +76,7 @@ body {
     height: auto;
     padding: 1.5em 1.5em 0.5em 1.5em;
     border-radius: 15px;
-    box-shadow: 0px 10px 40px -5px rgba(0,0,0,0.75);
+    box-shadow: 0px 10px 40px -5px rgba(0, 0, 0, 0.75);
 }
 
 .login-content .box-login {
@@ -188,7 +188,7 @@ body {
     padding: 0 8px;
 }
 
-.column-pbt{
+.column-pbt {
     float: left;
     width: 45%;
     margin-bottom: 16px;
@@ -240,6 +240,22 @@ body {
     text-align: center;
 }
 
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 2px solid #000000;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #ddddddc7;
+}
 
 
 ul {
@@ -251,17 +267,28 @@ h1 {
     font-weight: bold;
 }
 
+h2 {
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+}
 
+h2.pbt {
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding: 0;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+h2.par {
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding: 0;
+}
