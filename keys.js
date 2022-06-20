@@ -4,7 +4,7 @@ module.exports = {
     database: {
         host: 'localhost',
         user: 'root',
-        password: 'M@5012lsmr',
+        password: '',
         database: 'pozos_profundos_db'
     }
     
