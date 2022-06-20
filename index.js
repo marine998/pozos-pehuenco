@@ -11,13 +11,13 @@ app.set('port', process.env.PORT || 3050);
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 
-// MySql
-const connection = mysql.createConnection({
-    host: 'us-cdbr-east-05.cleardb.net',
-    user: 'b0678c97880259',
-    password: '3ee47a8d',
-    database: 'heroku_e41262fc0f6ee1e'
-});
+// MySql heroku
+// const connection = mysql.createConnection({
+//     host: 'us-cdbr-east-05.cleardb.net',
+//     user: 'b0678c97880259',
+//     password: '3ee47a8d',
+//     database: 'heroku_e41262fc0f6ee1e'
+// });
 
 // Middlewares
 app.use(morgan('dev'));
