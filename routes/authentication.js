@@ -11,8 +11,8 @@ router.get('/signup', (req, res) => {
 
 
 router.post('/signup', passport.authenticate('local.signup', {
-    successRedirect: '/profile',
-    failureRedirect: '/signup',
+    successRedirect: '/Profile.html',
+    failureRedirect: '/Home.html',
     failureFlash: true
 }));
 
@@ -25,7 +25,7 @@ router.post('/signin', (req, res, next) => {
 
     passport.authenticate('local.signin', {
         successRedirect: '/Profile.html',
-        failureRedirect: '/home.html',
+        failureRedirect: '/Home.html',
         failureFlash: true
     })(req,res, next);
 });
