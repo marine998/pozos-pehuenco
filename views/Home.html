@@ -35,18 +35,71 @@
                             <button onclick="document.getElementById('id02').style.display='block'">Registrate</button>
                         </li>
                     </ul>
-                    
+
                 </li>
             </ul>
         </div>
     </div>
+    <% if(message =='El usuario ingresado no existe') {%>
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-md-4 mx-auto">
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <%= message %>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+<% }%>
+<% if(message =='Contraseña incorrecta') {%>
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-md-4 mx-auto">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <%= message %>
+                </div>
+            </div>
+        </div>
+    </div>
+<% }%>
     <div id="id01" class="modal">
         <span onclick="document.getElementById('id01').style.display='none'" class="close"
             title="Close Modal">&times;</span>
 
-        <!-- CONTENIDO DEL MODAL LOGIN -->
+        <!-- CONTENIDO DEL MODAL-->
+        <form class="modal-content animate" action="/signin" method="POST">
+            <div class="container">
+                <ul>
+                    <li>
+                        <label for="uname">Usuario</label>
+                        <input type="text" name="correo_electronico_login" placeholder="Ingrese usuario">
+                    </li>
+                    <li>
+                        <label for="psw">Contraseña</label>
+                        <input type="password" name="contrasena_login" placeholder="Ingrese contraseña">
+                    </li>
+                    <li class="remember-li">
+                        <div>
+                            <label for="remember" class="remember-lbl">Recuérdame</label>
+                            <input type="checkbox" checked="checked" name="remember" class="remember-chk">
+                        </div>
+                        <div>
+                            <span class="psw">¿Olvidaste <a href="#">tu contraseña</a>?</span>
+                        </div>
+                    </li>
+                    <li class="botones-li">
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                            class="cancelbtn">Cancelar</button>
+                        <button type="submit" class="iniciabtn">Iniciar Sesión</button>
+                    </li>
+                </ul>
+            </div>
 
-        <%- include('partials/ModalLogin.html') %>
+            <div class="container">
+
+            </div>
+        </form>
 
     </div>
     <div id="id02" class="modal">
@@ -54,8 +107,47 @@
             title="Close Modal">&times;</span>
 
         <!-- CONTENIDO DEL MODAL REGISTRO -->
-        
-        <%- include('partials/ModalRegister.html') %>
+
+        <form class="modal-content animate" action="/signup">
+            <div class="container">
+                <ul>
+                    <li>
+                        <label for="uname">Ingrese su nombre</label>
+                        <input type="text" name="nombre" placeholder="Ingrese nombre">
+                    </li>
+                    <li>
+                        <label for="lname">Ingrese su apellido</label>
+                        <input type="text" name="apellido" placeholder="Ingrese apellido">
+                    </li>
+                    <li>
+                        <label for="psw">Ingrese su contraseña</label>
+                        <input type="password" name="contrasena" placeholder="Ingrese contraseña">
+                    </li>
+                    <li>
+                        <label for="psw">Repita su contraseña</label>
+                        <input type="password" name="psw" placeholder="Repita contraseña">
+                    </li>
+                    <li>
+                        <label for="mail">Ingrese su Email</label>
+                        <input type="text" name="correo_electronico" placeholder="Ingrese mail">
+                    </li>
+                    <li>
+                        <label for="phone">Ingrese su numero de Telefono</label>
+                        <input type="text" name="numero_telefono" placeholder="Ingrese su numero">
+                    </li>
+                    <li>
+                        <label for="dir">Ingrese su direccion</label>
+                        <input type="text" name="direccion" placeholder="Ingrese su direccion">
+                    </li>
+                    
+                    <li class="botones-li">
+                        <button type="button" onclick="document.getElementById('id02').style.display='none'"
+                    class="cancelbtn">Cancelar</button>
+                        <button type="submit" class="iniciabtn">Registrarse</button>
+                    </li>
+                </ul>
+            </div>
+        </form>
 
     </div>
 
