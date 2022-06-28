@@ -134,28 +134,28 @@
                 </ul>
             </div>
         </div>
-        <form class="right-profile" action="/action_page.php">
+        <form class="right-profile" action="/editarPerfil">
             <div class="container">
                 <ul>
                     <li>
                         <label for="uname">Nombre</label>
-                        <input type="text" name="usame requiered" placeholder="">
+                        <input type="text" name="nombre_editar" value="<%= user.nombre %>">
                     </li>
                     <li>
                         <label for="lname">Apellido</label>
-                        <input type="text" name="lname requiered" placeholder="">
+                        <input type="text" name="apellido_editar" value="<%= user.apellido %>">
                     </li>
                     <li>
                         <label for="mail">Email</label>
-                        <input type="text" name="mail requiered" placeholder="">
+                        <input type="text" name="correo_electronico_editar" value="<%= user.correo_electronico %>">
                     </li>
                     <li>
                         <label for="phone">Telefono</label>
-                        <input type="text" name="phone requiered" placeholder="">
+                        <input type="text" name="numero_telefono_editar" value="<%= user.numero_telefono %>">
                     </li>
                     <li>
                         <label for="dir">direccion</label>
-                        <input type="text" name="dir requiered" placeholder="">
+                        <input type="text" name="direccion_editar" value="<%= user.direccion %>" >
                     </li>
                     
                     <li class="botones-li">
