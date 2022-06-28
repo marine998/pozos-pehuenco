@@ -26,7 +26,7 @@
                 <img src="/logos/starlink.png" alt="Internet" style="width: 100%;">
                 <div class="container">
                     <h2 class="blc-h2">Starlink</h2>
-                    <a onclick="document.getElementById('id07').style.display='block'"">
+                    <a href="#">
                         <p><button class="button">Editar</button></p>
                     </a>
                 </div>
@@ -37,7 +37,7 @@
                 <img src="/logos/morcas.png" alt="Recicle" style="width: 100%;">
                 <div class="container">
                     <h2 class="blc-h2">Morcas</h2>
-                    <a onclick="document.getElementById('id07').style.display='block'"">
+                    <a href="#">
                         <p><button class="button">Editar</button></p>
                     </a>
                 </div>
@@ -48,7 +48,7 @@
                 <img src="/logos/directv.png" alt="TV" style="width: 100%;">
                 <div class="container">
                     <h2 class="blc-h2">Directv</h2>
-                    <a onclick="document.getElementById('id07').style.display='block'"">
+                    <a href="#">
                         <p><button class="button">Editar</button></p>
                     </a>
                 </div>
@@ -59,7 +59,7 @@
                 <img src="/logos/ecer.png" alt="TV" style="width: 100%;">
                 <div class="container">
                     <h2 class="blc-h2">ECER</h2>
-                    <a onclick="document.getElementById('id07').style.display='block'"">
+                    <a href="#">
                         <p><button class="button">Editar</button></p>
                     </a>
                 </div>
@@ -67,42 +67,5 @@
         </div>
     </div>
     
-    <div id="id07" class="modal">
-        <span onclick="document.getElementById('id07').style.display='none'" class="close"
-            title="Close Modal">&times;</span>
-
-        <!-- CONTENIDO DEL MODAL-->
-        <form class="modal-content animate" action="/action_page.php">
-            <div class="container">
-                <ul>
-                    <li>
-                        <label for="tituloproyecto01">Nombre de la empresa</label>
-                        <input type="text" name="name-partner" placeholder="Nombre empresa">
-                    </li>
-                    <li>
-                        <label for="sub-titulo01">Link de la pagina</label>
-                        <input type="text" name="link-partner" placeholder="Ingrese Link">
-                    </li>
-                    <li>
-                        <label for="img-display-proyect-01">Subir Logo de la Empresa en 602 x 300 px</label>
-                        <input onchange="validateSize(this)" type="file" id="file" value="subir imagen" placeholder="Subir Logo" name="#" accept="image/png, image/jpeg, text/pdf">
-                    </li>
-
-                    <li class="botones-li">
-                        <button type="button" onclick="document.getElementById('id07').style.display='none'"
-                            class="cancelbtn">Cancelar</button>
-                        <button type="submit" class="iniciabtn">Guardar</button>
-                    </li>
-                </ul>
-            </div>
-        </form>
-    </div>
-   
-    <script type = "text/javascript" src = "/js/uwu.js">
-
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
-        </script>
 </body>
 </html>

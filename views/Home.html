@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 
 <body>
@@ -45,18 +45,84 @@
             title="Close Modal">&times;</span>
 
         <!-- CONTENIDO DEL MODAL LOGIN -->
+        <form class="modal-content animate" action="/action_page.php">
+            <div class="container">
+                <ul>
+                    <li>
+                        <label for="uname">Usuario</label>
+                        <input type="text" name="usame requiered" placeholder="Ingrese usuario">
+                    </li>
+                    <li>
+                        <label for="psw">Contraseña</label>
+                        <input type="password" name="psw" placeholder="Ingrese contraseña">
+                    </li>
+                    <li class="remember-li">  
+                        <div>
+                            <label for="remember" class="remember-lbl">Recuérdame</label>
+                            <input type="checkbox" checked="checked" name="remember" class="remember-chk">
+                        </div>     
+                        <div>
+                            <span class="psw">¿Olvidaste <a href="#">tu contraseña</a>?</span>
+                        </div>
+                    </li>
+                    <li class="botones-li">
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                        class="cancelbtn">Cancelar</button>
+                        <button type="submit" class="iniciabtn">Iniciar Sesión</button>
+                    </li>
+                </ul>                
+            </div>
 
-        <%- include('partials/ModalLogin.html') %>
-
+            <div class="container">
+                
+            </div>
+        </form>
     </div>
     <div id="id02" class="modal">
         <span onclick="document.getElementById('id02').style.display='none'" class="close"
             title="Close Modal">&times;</span>
 
         <!-- CONTENIDO DEL MODAL REGISTRO -->
-        
-        <%- include('partials/ModalRegister.html') %>
-
+        <form class="modal-content animate" action="/action_page.php">
+            <div class="container">
+                <ul>
+                    <li>
+                        <label for="uname">Ingrese su nombre</label>
+                        <input type="text" name="usame requiered" placeholder="Ingrese nombre">
+                    </li>
+                    <li>
+                        <label for="lname">Ingrese su apellido</label>
+                        <input type="text" name="lname requiered" placeholder="Ingrese apellido">
+                    </li>
+                    <li>
+                        <label for="psw">Ingrese su contraseña</label>
+                        <input type="password" name="psw" placeholder="Ingrese contraseña">
+                    </li>
+                    <li>
+                        <label for="psw">Repita su contraseña</label>
+                        <input type="password" name="psw" placeholder="Repita contraseña">
+                    </li>
+                    <li>
+                        <label for="mail">Ingrese su Email</label>
+                        <input type="text" name="mail requiered" placeholder="Ingrese mail">
+                    </li>
+                    <li>
+                        <label for="phone">Ingrese su numero de Telefono</label>
+                        <input type="text" name="phone requiered" placeholder="Ingrese su numero">
+                    </li>
+                    <li>
+                        <label for="dir">Ingrese su direccion</label>
+                        <input type="text" name="dir requiered" placeholder="Ingrese su direccion">
+                    </li>
+                    
+                    <li class="botones-li">
+                        <button type="button" onclick="document.getElementById('id02').style.display='none'"
+                    class="cancelbtn">Cancelar</button>
+                        <button type="submit" class="iniciabtn">Registrarse</button>
+                    </li>
+                </ul>
+            </div>
+        </form>
     </div>
 
     <!-- Contenedor SL-->
