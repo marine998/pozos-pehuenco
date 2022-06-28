@@ -5,11 +5,17 @@ router.get('/', (req, res) => {
     res.render('Home.html');
 });
 
-router.get('/Home.html', (req, res) => {
+// Register link
+router.post('/add', (req, res) => {
+res.send('received');
+res.render('Home.html');
+ });
+
+router.get('/Home', (req, res) => {
     res.render('Home.html');
 });
 
-router.get('/Profile.html', (req, res) => {
+router.get('/Profile', (req, res) => {
     res.render('Profile.html');
 });
 
