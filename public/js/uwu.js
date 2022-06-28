@@ -39,3 +39,16 @@ function showSlides() {
   setTimeout(showSlides, 5000); // cambia cada 15seg
 }
 */
+
+
+/*  ALERTAS PROYECTO  FUNCIONANDO  */
+
+function validateSize(input) {
+  const fileSize = input.files[0].size / 1024 / 1024; //en Mib
+  if (fileSize > 2) {
+    alert('Archivo excede los 2 Mib');
+  } else {
+    return
+  }
+}
+
