@@ -35,8 +35,6 @@ router.get('/Partners.html', (req, res) => {
     res.render('Partners.html');
 });
 
-
-
 router.get('/AdmLogin.html', (req, res) => {
     res.render('AdmLogin.html');
 });
@@ -54,6 +52,11 @@ router.get('/AdmProjects.html', (req, res) => {
 });
 
 router.get('/AdmPublications.html', (req, res) => {
+    res.render('AdmPublications.html');
+});
+
+router.post('/upload', (req, res) => {
+    console.log(req.file);
     res.render('AdmPublications.html');
 });
 
