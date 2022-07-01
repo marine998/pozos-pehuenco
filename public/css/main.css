@@ -1306,3 +1306,30 @@ li.btn-projects button.cancelbtn {
 li.btn-projects button.cancelbtn:hover {
     background-color: #b4e6f3;
 }
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+.logo {
+    margin-top: -12px;
+    height: 90%;
+}
+
+h1.title {
+    display: initial;
+    color: #ffffff;
+}
