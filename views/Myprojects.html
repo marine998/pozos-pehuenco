@@ -140,31 +140,14 @@
                     <div class="card projects">
                         
                         <button >
-                            <a href="Proyect.html">
+                            <a href="Proyect.html/<%= proyects[i].id_proyecto %>">
                                 <img src="/icons/add_folder.png" alt="" >
                                 
                             </a>
                             <p><%= proyects[i].nombre_proyecto %> </p>
                         </button>
-                        <form class="modal-content animate" action="/deleteProyect" method="POST">
-                            <div>
-                                <input type="hidden" id="id_proyecto" name="id_proyecto" value="<%= proyects[i].id_proyecto %>">
 
-                                <button type="submit" class="iniciabtn">delete</button>
-                            </div>
-                        </form>
 
-                        <!-- Formulario de actualizar Proyecto -->
-                        
-                        <form class="modal-content animate" action="/updateProyect" method="POST">
-                            <div>
-                                <input type="text" id="id_proyecto" name="id_proyecto" value="<%= proyects[i].id_proyecto %>">
-                                <input type="text" id="nombre_proyecto" name="nombre_proyecto" value="A">
-                                <input type="text" id="ubicacion" name="ubicacion" value="<%= proyects[i].ubicacion %>">
-                                <input type="text" id="descripcion" name="descripcion" value="<%= proyects[i].descripcion %>">
-                                <button type="submit" class="iniciabtn">update</button>
-                            </div>
-                        </form>
                     </div>
                 </div>
                

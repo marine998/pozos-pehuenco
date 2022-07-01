@@ -134,8 +134,17 @@
                 </ul>
             </div>
         </div>
+        
+
         <form class="right-profile" action="/editarPerfil" method="POST">
             <div class="container">
+                <% if(success =='Actualizado Correctamente') {%>
+
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                        <div><%= success %></div>
+                          
+                        </div>
+            <% }%>
                 <ul>
                     <li>
                         <label for="uname">Nombre</label>

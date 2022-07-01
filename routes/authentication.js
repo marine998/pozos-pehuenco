@@ -5,9 +5,7 @@ const passport = require('passport');
 const pool = require('../database');
 const helpers = require('../lib/helpers');
 const PDF = require('pdfkit');
-/* const fs  = require('fs');
-const doc = require('pdfkit');
-const pdfService = require('../service/pdf-service'); */
+
 
 //SIGNUP
 router.get('/signup', (req, res) => {
@@ -49,6 +47,7 @@ router.post('/editarPerfil', async (req, res, next) => {
     const { correo_electronico_editar } = req.body;
  // pool.query('UPDATE usuario SET nombre = ?, apellido = ?, numero_telefono = ?, direccion = ? Where correo_electronico = ?',[nombre_editar],[apellido_editar],[numero_telefono_editar],[direccion_editar],[correo_electronico_editar]);
     await pool.query('UPDATE usuario SET nombre = ?, apellido = ?, numero_telefono = ?, direccion = ? WHERE correo_electronico = ?',[nombre_editar,apellido_editar,numero_telefono_editar,direccion_editar,correo_electronico_editar]);
+    req.flash('success','Actualizado Correctamente')
     res.redirect('/Profile.html');
     
 });
@@ -110,9 +109,7 @@ router.post('/chgPassword', async(req, res, next) => {
     const { correo_electronico } = req.body;
     const { actual_password } = req.body;
     const { new_password } = req.body;
-    console.log(correo_electronico);
-    console.log(actual_password);
-    console.log(new_password);
+
 
     const rows = await pool.query('SELECT * FROM usuario WHERE correo_electronico = ?', [correo_electronico]);
   
@@ -141,9 +138,9 @@ router.post('/chgPassword', async(req, res, next) => {
 
 router.post('/cotizacion', async (req, res) => {
    
-
-    const doc = new PDF({bufferPages: true});
-    /* const filenae = `cotizacionn`+${Date.now()}+`.pdf` */
+ /* const filename = `cotizacionn`+${Date.now()}+`.pdf` */
+    /* const doc = new PDF({bufferPages: true});
+   
     const filename = 'cotizacion.pdf'
     const stream   = res.writeHead(200, {
         'Content-Type': 'application/pdf',
@@ -152,10 +149,19 @@ router.post('/cotizacion', async (req, res) => {
  
 
     doc.on( 'data', (data) => {stream.write(data)});
-    doc.on( 'end', () => {stream.end()});
-    /* res.redirect('quotes.html');     */         
+    doc.on( 'end', () => {stream.end()}); */
+     
 
 });
+router.get('/Proyect.html/:id', async (req, res) => {
+
+
+    const proyect = await pool.query('SELECT * FROM proyecto where id_proyecto = ?',[req.params.id]); 
+    res.render('Proyect.html', {proyect});
+
+
+});
+
 
 
 

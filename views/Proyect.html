@@ -116,7 +116,9 @@
                 <ul class="menu-client">
                     <li><a class="menu__client" href="Profile.html">Mi Perfil</a></li>
                     <li><a class="menu__client" href="ChgPassword.html">Cambiar clave</a></li>
-                    <li><a class="menu__client" href="Myprojects.html">Mis Proyectos</a></li>
+                    <script>
+                        document.write('<li><a class="menu__client" href="' + document.referrer + '">Mis Proyectos</a></li>');
+                      </script>
                 </ul>
             </div>
         </div>
@@ -125,18 +127,19 @@
                 <div class="form-projects">
                     <ul>
                         <li class="li-projects">
-                            <label for="">Nombre: </label>
+                            <label for=""><%= proyect[0].nombre_proyecto %> </label>
                         </li>
                         <li class="li-projects">
-                            <label for="">Direccion: </label>
+                            <label for=""><%= proyect[0].ubicacion %> </label>
                         </li>
                         <li class="li-projects">
-                            <label for="">Descripcion: </label>
+                            <label for=""><%= proyect[0].descripcion %> </label>
                         </li>
                     </ul>
                 </div>
                 <div class="archives-projects">
                     <div class="archives">
+
                         <p>Archivos adjuntos</p>
                         <img src="/icons/gallery.png" alt="" class="iconsp">
                     </div>
@@ -147,11 +150,19 @@
                 </div>
                 <div class="cont-projects">
                     <li class="btn-projects">
-                        <a href="Myprojects.html">
-                            <button type="button" class="cancel-btn">Cancelar</button>
-                        </a>
+                        
+                        <script>
+                            document.write('<a class="" href="' + document.referrer + '"><button type="button" class="cancel-btn">Cancelar</button></a>');
+                          </script>
                         <button type="submit"onclick="document.getElementById('id015').style.display='block'"
                         class="editbtn">Editar</button>
+                        <form class="" action="/deleteProyect" method="POST">
+                            <div>
+                                <input type="hidden" id="id_proyecto" name="id_proyecto" value="<%= proyect[0].id_proyecto %>">
+
+                                <button type="submit" class="editbtn">delete</button>
+                            </div>
+                        </form>
                     </li>
                 </div>
 
@@ -164,22 +175,23 @@
         <div id="id015" class="modal">
             <span onclick="document.getElementById('id015').style.display='none'" class="close"
                 title="Close Modal">&times;</span>
-    
+
             <!-- CONTENIDO DEL MODAL-->
-            <form class="modal-content animate" action="/action_page.php">
+            <form class="modal-content animate" action="/updateProyect" method="POST">
                 <div class="container">
                     <ul>
                         <li>
+                            <input type="hidden" id="id_proyecto" name="id_proyecto" value="<%= proyect[0].id_proyecto %>">
                             <label for="uname">Editar nombre del proyecto</label>
-                            <input type="text" name="#" placeholder="Editar">
+                            <input type="text" id="nombre_proyecto"  placeholder="Editar" name="nombre_proyecto" value="<%= proyect[0].nombre_proyecto %>">
                         </li>
                         <li>
                             <label for="#">Editar direccion</label>
-                            <input type="text" name="#" placeholder="Editar">
+                            <input type="text" name="ubicacion" placeholder="Editar" value="<%= proyect[0].ubicacion %>">
                         </li>
                         <li>
                             <label for="#">Editar descripcion del proyecto</label>
-                            <input type="text" name="#" placeholder="Editar">
+                            <input type="text" name="descripcion" placeholder="Editar" value="<%= proyect[0].descripcion %>">
                         </li>
                         <li class="botones-li">
                             <button type="button" onclick="document.getElementById('id015').style.display='none'"
