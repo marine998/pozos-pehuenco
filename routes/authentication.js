@@ -117,11 +117,10 @@ router.post('/chgPassword', async(req, res, next) => {
         const validPassword = await helpers.matchPassword(actual_password, user.contrasena );
 
         if (validPassword) {
-            
             await pool.query('UPDATE usuario SET contrasena = ? WHERE correo_electronico = ?',[await helpers.encryptPassword(new_password),correo_electronico]);
             console.log('1');
             req.flash('success','Constraseña actualizada');
-           
+            
             
         } else {
             console.log('2');
@@ -160,8 +159,18 @@ router.get('/Proyect.html/:id', async (req, res) => {
 
 
 });
+/* router.get('/logout', async (req, res) => {
+    req.logOut();
+    res.redirect('/Home.html')
 
+}); */
+router.get('/logout', function(req, res, next) {
+    req.logout(function(err) {
+      if (err) { return next(err); }
+      res.redirect('/Home.html')
 
+    });
+  });
 
 
 
