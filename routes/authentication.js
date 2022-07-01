@@ -4,7 +4,6 @@ const router = express.Router();
 const passport = require('passport');
 const pool = require('../database');
 const helpers = require('../lib/helpers');
-const PDF = require('pdfkit');
 
 
 //SIGNUP
