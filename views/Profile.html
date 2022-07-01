@@ -134,7 +134,7 @@
                 </ul>
             </div>
         </div>
-        <form class="right-profile" action="/editarPerfil">
+        <form class="right-profile" action="/editarPerfil" method="POST">
             <div class="container">
                 <ul>
                     <li>
@@ -147,7 +147,7 @@
                     </li>
                     <li>
                         <label for="mail">Email</label>
-                        <input type="text" name="correo_electronico_editar" value="<%= user.correo_electronico %>">
+                        <input type="text" name="correo_electronico_editar" value="<%= user.correo_electronico %>" readonly>
                     </li>
                     <li>
                         <label for="phone">Telefono</label>
@@ -161,6 +161,7 @@
                     <li class="botones-li">
                         <button type="submit" class="iniciabtn">Editar</button>
                     </li>
+
                 </ul>
             </div>
         </form>

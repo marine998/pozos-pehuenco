@@ -120,16 +120,57 @@
                 </ul>
             </div>
         </div>
-
+        
         <div class="right-projects">
-            <div class="column projects">
-                <div class="card projects">
-                    <button onclick="document.getElementById('id03').style.display='block'">
-                        <img src="/icons/folder_pr.png" alt="">
-                        <p>Proyecto X</p>
-                    </button>
+            <% if(success =='borrado') {%>
+                <div class="container p-4 align-top">
+                    <div class="row">
+                        <div class="col-md-4 mx-auto">
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <%= success %>
+        
+                            </div>
+                            
+                        </div>
+                    </div>
                 </div>
-            </div>
+        <% }%>
+            <% for( i=0;i<proyects.length;i++) { %>
+                <div class="column projects">
+                    <div class="card projects">
+                        
+                        <button >
+                            <a href="Proyect.html">
+                                <img src="/icons/add_folder.png" alt="" >
+                                
+                            </a>
+                            <p><%= proyects[i].nombre_proyecto %> </p>
+                        </button>
+                        <form class="modal-content animate" action="/deleteProyect" method="POST">
+                            <div>
+                                <input type="hidden" id="id_proyecto" name="id_proyecto" value="<%= proyects[i].id_proyecto %>">
+
+                                <button type="submit" class="iniciabtn">delete</button>
+                            </div>
+                        </form>
+
+                        <!-- Formulario de actualizar Proyecto -->
+                        
+                        <form class="modal-content animate" action="/updateProyect" method="POST">
+                            <div>
+                                <input type="text" id="id_proyecto" name="id_proyecto" value="<%= proyects[i].id_proyecto %>">
+                                <input type="text" id="nombre_proyecto" name="nombre_proyecto" value="A">
+                                <input type="text" id="ubicacion" name="ubicacion" value="<%= proyects[i].ubicacion %>">
+                                <input type="text" id="descripcion" name="descripcion" value="<%= proyects[i].descripcion %>">
+                                <button type="submit" class="iniciabtn">update</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+               
+            <% } %>
+            
+
             <div class="column projects">
                 <div class="card projects">
                     <button onclick="document.getElementById('id04').style.display='block'">
@@ -138,72 +179,6 @@
                     </button>
                 </div>
             </div>
-            <!--
-            <div class="column projects">
-                <div class="card projects">
-                    <a href="">
-                        <img src="/icons/add_folder.png" alt="">
-                        <p>Nuevo Proyecto</p>
-                    </a>
-                </div>
-            </div>
-            <div class="column projects">
-                <div class="card projects">
-                    <a href="">
-                        <img src="/icons/add_folder.png" alt="">
-                        <p>Nuevo Proyecto</p>
-                    </a>
-                </div>
-            </div>
-            <div class="column projects">
-                <div class="card projects">
-                    <a href="">
-                        <img src="/icons/add_folder.png" alt="">
-                        <p>Nuevo Proyecto</p>
-                    </a>
-                </div>
-            </div>
-            <div class="column projects">
-                <div class="card projects">
-                    <a href="">
-                        <img src="/icons/add_folder.png" alt="">
-                        <p>Nuevo Proyecto</p>
-                    </a>
-                </div>
-            </div>
-            <div class="column projects">
-                <div class="card projects">
-                    <a href="">
-                        <img src="/icons/add_folder.png" alt="">
-                        <p>Nuevo Proyecto</p>
-                    </a>
-                </div>
-            </div>
-            <div class="column projects">
-                <div class="card projects">
-                    <a href="">
-                        <img src="/icons/add_folder.png" alt="">
-                        <p>Nuevo Proyecto</p>
-                    </a>
-                </div>
-            </div>
-            <div class="column projects">
-                <div class="card projects">
-                    <a href="">
-                        <img src="/icons/add_folder.png" alt="">
-                        <p>Nuevo Proyecto</p>
-                    </a>
-                </div>
-            </div>
-            <div class="column projects">
-                <div class="card projects">
-                    <a href="">
-                        <img src="/icons/add_folder.png" alt="">
-                        <p>Nuevo Proyecto</p>
-                    </a>
-                </div>
-            </div>
-            -->
 
         </div>
 
@@ -223,11 +198,11 @@
                             <input type="text" name="" placeholder="Nombre del proyecto">
                         </li>
                         <li>
-                            <label for="direction">Direccion</label>
+                            <label for="direction">Direcci&oacute;n &oacute;</label>
                             <input type="text" name="" placeholder="Ingrese Direccion">
                         </li>
                         <li>
-                            <label for="direction">Direccion</label>
+                            <label for="direction">Descripci&oacute;n</label>
                             <input type="" name="" placeholder="Ingrese Direccion">
                         </li>
                 
@@ -248,26 +223,31 @@
                 title="Close Modal">&times;</span>
 
             <!-- CONTENIDO DEL MODAL-->
-            <form class="modal-content animate" action="/action_page.php">
+            <form class="modal-content animate" action="/addProyect" method="POST">
                 <div class="container">
                     <ul>
                         <li>
                             <label for="Nproject">Nombre del proyecto</label>
-                            <input type="text" name="" placeholder="Nombre del proyecto">
+                            <input type="text" name="nombre_proyecto" placeholder="Nombre del proyecto">
                         </li>
                         <li>
-                            <label for="direction">Direccion</label>
-                            <input type="text" name="" placeholder="Ingrese Direccion">
+                            <label for="direction">Direcci&oacute;n</label>
+                            <input type="text" name="ubicacion" placeholder="Ingrese Direccion">
                         </li>
                         <li>
-                            <label for="direction">Descripcion</label>
-                            <input type="" name="" placeholder="">
+                            <label for="direction">Descripci&oacute;n</label>
+                            <input type="" name="descripcion" placeholder="">
                         </li>
+                        <li>
+                            <input type="hidden" id="correo_electronico" name="correo_electronico" value="<%= user.correo_electronico %>">
+                        </li>
+                        
                         <li class="botones-li cotizaciones"> 
                             <a href="quotes.html">
                                 <button type="button" class="cotiza" >Crear cotizacion</button>
                             </a>
                         </li>
+                        
                         <li class="botones-li">
                             <button type="button" onclick="document.getElementById('id04').style.display='none'"
                                 class="cancelbtn">Cancelar</button>

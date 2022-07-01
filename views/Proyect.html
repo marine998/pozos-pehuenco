@@ -1,0 +1,242 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+
+    <div class="topnav">
+        <div>
+            <h1>Pozos Pehuenco</h1>
+        </div>
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label for="menu__toggle" class="menu__btn">
+                <span></span>
+            </label>
+            <ul class="menu__box">
+                <li><a class="menu__item" href="Home.html">Inicio</a></li>
+                <li><a class="menu__item" href="Profile.html">Perfil</a></li>
+                <li><a class="menu__item" href="quotes.html">Cotizaciones</a></li>
+                <li><a class="menu__item" href="Myprojects.html">Mis Proyectos</a></li>
+                <li class="menu-login">
+                    <ul>
+                        <li>
+                            <button onclick="document.getElementById('id01').style.display='block'">Login</button>
+                        </li>
+                        <li>
+                            <button onclick="document.getElementById('id02').style.display='block'">Registrate</button>
+                        </li>
+                    </ul>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="id01" class="modal">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close"
+            title="Close Modal">&times;</span>
+
+        <!-- CONTENIDO DEL MODAL-->
+        <form class="modal-content animate" action="/action_page.php">
+            <div class="container">
+                <ul>
+                    <li>
+                        <label for="uname">Usuario</label>
+                        <input type="text" name="usame requiered" placeholder="Ingrese usuario">
+                    </li>
+                    <li>
+                        <label for="psw">Contraseña</label>
+                        <input type="password" name="psw" placeholder="Ingrese contraseña">
+                    </li>
+                    <li class="remember-li">
+                        <div>
+                            <label for="remember" class="remember-lbl">Recuérdame</label>
+                            <input type="checkbox" checked="checked" name="remember" class="remember-chk">
+                        </div>
+                        <div>
+                            <span class="psw">¿Olvidaste <a href="#">tu contraseña</a>?</span>
+                        </div>
+                    </li>
+                    <li class="botones-li">
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                            class="cancelbtn">Cancelar</button>
+                        <button type="submit" class="iniciabtn">Iniciar Sesión</button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="container">
+
+            </div>
+        </form>
+    </div>
+    <div id="id02" class="modal">
+        <span onclick="document.getElementById('id02').style.display='none'" class="close"
+            title="Close Modal">&times;</span>
+
+        <!-- CONTENIDO DEL MODAL-->
+        <form class="modal-content animate" action="/action_page.php">
+            <div class="container">
+                <ul>
+                    <li>
+                        <label for="uname">Usuario</label>
+                        <input type="text" name="usame requiered" placeholder="Ingrese usuario">
+                    </li>
+                    <li>
+                        <label for="psw">Contraseña</label>
+                        <input type="password" name="psw" placeholder="Ingrese contraseña">
+                    </li>
+                    <li class="remember-li">
+                        <div>
+                            <label for="remember" class="remember-lbl">Recuérdame</label>
+                            <input type="checkbox" checked="checked" name="remember" class="remember-chk">
+                        </div>
+                    </li>
+                    <li class="botones-li">
+                        <button type="button" onclick="document.getElementById('id02').style.display='none'"
+                            class="cancelbtn">Cancelar</button>
+                        <button type="submit" class="iniciabtn">Iniciar Sesión</button>
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="row-profile">
+        <div class="left-column-client">
+            <div class="card-menu-client">
+                <ul class="menu-client">
+                    <li><a class="menu__client" href="Profile.html">Mi Perfil</a></li>
+                    <li><a class="menu__client" href="ChgPassword.html">Cambiar clave</a></li>
+                    <li><a class="menu__client" href="Myprojects.html">Mis Proyectos</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="right-projects">
+            <div class="card-projects">
+                <div class="form-projects">
+                    <ul>
+                        <li class="li-projects">
+                            <label for="">Nombre: </label>
+                        </li>
+                        <li class="li-projects">
+                            <label for="">Direccion: </label>
+                        </li>
+                        <li class="li-projects">
+                            <label for="">Descripcion: </label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="archives-projects">
+                    <div class="archives">
+                        <p>Archivos adjuntos</p>
+                        <img src="/icons/gallery.png" alt="" class="iconsp">
+                    </div>
+                    <div class="pdf">
+                        <p>Cotizacion</p>
+                        <img src="/icons/pdf.png" alt="" class="iconsp">
+                    </div>
+                </div>
+                <div class="cont-projects">
+                    <li class="btn-projects">
+                        <a href="Myprojects.html">
+                            <button type="button" class="cancel-btn">Cancelar</button>
+                        </a>
+                        <button type="submit"onclick="document.getElementById('id015').style.display='block'"
+                        class="editbtn">Editar</button>
+                    </li>
+                </div>
+
+            </div>
+        </div>
+
+
+            <!-- MODAL  -->
+
+        <div id="id015" class="modal">
+            <span onclick="document.getElementById('id015').style.display='none'" class="close"
+                title="Close Modal">&times;</span>
+    
+            <!-- CONTENIDO DEL MODAL-->
+            <form class="modal-content animate" action="/action_page.php">
+                <div class="container">
+                    <ul>
+                        <li>
+                            <label for="uname">Editar nombre del proyecto</label>
+                            <input type="text" name="#" placeholder="Editar">
+                        </li>
+                        <li>
+                            <label for="#">Editar direccion</label>
+                            <input type="text" name="#" placeholder="Editar">
+                        </li>
+                        <li>
+                            <label for="#">Editar descripcion del proyecto</label>
+                            <input type="text" name="#" placeholder="Editar">
+                        </li>
+                        <li class="botones-li">
+                            <button type="button" onclick="document.getElementById('id015').style.display='none'"
+                            class="cancelbtn">Cancelar</button>
+                            <button type="submit" class="iniciabtn">Aceptar</button>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+
+
+
+        <div class="footer">
+            <div class="footer-right">
+                <div class="map" id="map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12352.200385644215!2d-72.23857895424698!3d-39.28711441428641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9614623c8e00fe6f%3A0xe7812f04b9706fcc!2sVillarrica%2C%20Araucania!5e0!3m2!1sen!2scl!4v1654918726427!5m2!1sen!2scl"
+                        width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <div class="footer-left">
+                <div class="contacto">
+                    <h4>Contactanos en nuestras redes sociales</h4>
+                    <ul>
+                        <li>
+                            <p>Facebook</p>
+                            <a href="http://www.facebook.com/">
+                                <img src="/logos/PngItem_5134688.png" alt="facebook" class="rs-icon">
+                            </a>
+                        </li>
+                        <li>
+                            <p>Whatsapp</p>
+                            <a href="https://www.whatsapp.com/">
+                                <img src="/logos/PngItem_1139665.png" alt="whatsapp" class="rs-icon">
+                            </a>
+                        </li>
+                        <li>
+                            <p>Twitter</p>
+                            <a href="https://www.twitter.com/">
+                                <img src="/logos/PngItem_4834.png" alt="twitter" class="rs-icon">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-full">
+                <p>Copyright 2022 Pozos Pehuenco</p>
+            </div>
+        </div>
+        <script type="text/javascript" src="/js/uwu.js">
+
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+            </script>
+</body>
+
+</html>

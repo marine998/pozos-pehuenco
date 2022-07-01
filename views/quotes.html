@@ -122,7 +122,7 @@
     </div>
 
     <div class="quotes">
-        <form class="qts-content">
+        <form class="qts-content" action="/cotizacion" method="POST">
             <div>
                 <h2 class="qts">Cotizaciones</h2>
             </div>
@@ -141,12 +141,18 @@
                             <input type="radio" id="basic" name="install">
                             <label for="basic">Instalacion basica</label>
 
-                            <input type="radio" id="advance" name="install">
-                            <label for="advance">Instalacion Avanzada</label>
-
-                            <input type="radio" id="update" name="install">
-                            <label for="update">Actualizacion</label>
                         </fieldset>
+                    </li>
+                    
+                    <li>
+                        
+                    </li>
+                    <li class="input">
+                        <fieldset>
+                            <input type="radio" id="advance" name="install">
+                            <label for="advance" class="margin-top: 25px">Instalacion Avanzada</label>
+                        </fieldset>
+
                     </li>
                     <li>
                         <label for="city-select">Elija su punto mas cercano:</label>
@@ -160,15 +166,16 @@
                                 <option value="melipeuco">Melipeuco: $14.000</option>
                                 <option value="pucon">Pucon: $10.000</option>
                                 <option value="quepe">Quepe: $5.000</option>
-                                <option value="temuco">Temuco: $8.000</option>
+                                <option value="temuco">Temuco: $28.000</option>
                                 <option value="tolten">Tolten: $24.000</option>
                                 <option value="villarrica">Villarrica: $10.000</option>
                             </optgroup>
                         </select>
                     </li>
                     <li class="botones-li">
-                        <button type="button" onclick="document.getElementById('id02').style.display='none'"
-                            class="qtsbtn">Generar cotizacion</button>
+                        <!-- <button type="button" onclick="document.getElementById('id02').style.display='none'"
+                            class="qtsbtn">Generar cotizacion</button> -->
+                            <button type="submit" class="iniciabtn">Editar</button>
                     </li>
                 </ul>
             </div>
