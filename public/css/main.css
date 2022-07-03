@@ -6,7 +6,7 @@ body {
 }
 
 .row {
-    width: 100%;
+    width: 105%;
     display: flex;
     flex-wrap: wrap;
     margin: 1em 0 2em 0;
@@ -468,6 +468,7 @@ body {
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
+    background-color: rgba(69, 68, 68, 0.604);
 }
 
 /* posicion de los botones siguentes */
@@ -558,7 +559,7 @@ body {
 }
 
 .img-about {
-    max-width: 100%;
+    max-width: 90%;
     margin-top: 15px;
 }
 
@@ -713,20 +714,22 @@ body {
 
 .right-column {
     display: flex;
+    align-self: flex-start;
     max-width: 33.2%;
     margin: 0;
     padding: 0;
     flex-wrap: wrap;
     justify-content: flex-start;
-    width: 100%;
+    width: 90%;
+    margin-right: -14rem;
 }
 
 .card-right {
     background-color: #0d6378c5;
     border-radius: 5px;
     border: 2px solid #0d637857;
-    width: 100%;
-    padding: 20px;
+    width: 80%;
+    padding: 10px;
 }
 
 .card-right:first-of-type  {
