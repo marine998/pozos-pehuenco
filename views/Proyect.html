@@ -22,21 +22,26 @@
                 <span></span>
             </label>
             <ul class="menu__box">
-                <li><a class="menu__item" href="Home.html">Inicio</a></li>
-                <li><a class="menu__item" href="Profile.html">Perfil</a></li>
-                <li><a class="menu__item" href="quotes.html">Cotizaciones</a></li>
-                <li><a class="menu__item" href="Myprojects.html">Mis Proyectos</a></li>
-                <li class="menu-login">
-                    <ul>
-                        <li>
-                            <button onclick="document.getElementById('id01').style.display='block'">Login</button>
-                        </li>
-                        <li>
-                            <button onclick="document.getElementById('id02').style.display='block'">Registrate</button>
-                        </li>
-                    </ul>
+                <% if(user) {%>
+                    <script>
+                        document.write('<li><a class="menu__client" href="' + document.referrer+'">Mis Proyectos</a></li>');
+                      </script>
+                <%} else { %>
+                    <li class="menu-login">
+                    
+                        <ul>
+                            <li>
+                                <button onclick="document.getElementById('id01').style.display='block'">Login</button>
+                            </li>
+                            <li>
+                                <button onclick="document.getElementById('id02').style.display='block'">Registrate</button>
+                            </li>
+                        </ul>
+    
+                    </li>
+                <% } %>
 
-                </li>
+
             </ul>
         </div>
     </div>
@@ -115,12 +120,11 @@
         <div class="left-column-client">
             <div class="card-menu-client">
                 <ul class="menu-client">
-                    <li><a class="menu__client" href="Profile.html">Mi Perfil</a></li>
-                    <li><a class="menu__client" href="ChgPassword.html">Cambiar clave</a></li>
+
                     <script>
                         document.write('<li><a class="menu__client" href="' + document.referrer+'">Mis Proyectos</a></li>');
                       </script>
-                    <li><a class="menu__client" href="/logout">Cerrar Sesión</a></li>
+
                 </ul>
                 
             </div>
@@ -148,7 +152,13 @@
                     </div>
                     <div class="pdf">
                         <p>Cotizacion</p>
-                        <img src="/icons/pdf.png" alt="" class="iconsp">
+                            
+                            
+                     
+                        <button type="submit"onclick="document.getElementById('id016').style.display='block'"
+                        class=""><img src="/icons/addPublication.png" alt="" class="iconsp" ></button>
+          
+                        
                     </div>
                 </div>
                 <div class="cont-projects">
@@ -206,6 +216,67 @@
             </form>
         </div>
 
+                    <!-- MODAL DE COTIZACION -->
+
+                    <div id="id016" class="modal">
+                        <span onclick="document.getElementById('id016').style.display='none'" class="close"
+                            title="Close Modal">&times;</span>
+            
+                        <!-- CONTENIDO DEL MODAL-->
+                        <div class="quotes">
+                            <form class="qts-content" action="/cotizacion" method="POST">
+                                <div>
+                                    <h2 class="qts">Cotizaciones</h2>
+                                </div>
+                                <div class="box-qts">
+                                    <ul>
+                                        <li class="input">
+                                            <fieldset>
+                                                <legend>Elija que desea instalar</legend>
+                                                <label for="basic">Instalacion b&aacute;sica</label>
+                                                <input type="radio" id="radio_install" name="radio_install" value="b">
+                                                
+                                            </fieldset>
+                                        </li>
+                                        
+
+                                        <li class="input">
+                                            <fieldset>
+                                                <label for="advance" class="margin-top: 25px">Instalacion Avanzada</label>
+                                                <input type="radio" id="radio_install" name="radio_install" value="a">
+                                            </fieldset>
+                                            <input type="hidden" id="id_proyecto1" name="id_proyecto1" value="<%= proyect[0].id_proyecto %>">
+                                                <input type="hidden" id="city_value" name="city_value" value="0">
+                                        </li>
+
+                                        <li>
+                                            <label for="city-select">Elija su punto mas cercano:</label>
+                                            <select id="city-select" name="city_select">
+                                                <optgroup label="--Por favor elija su punto mas cercano--">
+<!--                                                     <option value="carahue">Carahue: $27.000</option>
+                                                    <option value="cunco">Cunco: $7.500</option>
+                                                    <option value="curarrehue">Curarrehue: $5.000</option>
+                                                    <option value="freire">Freire: $4.000</option>
+                                                    <option value="loncoche">Loncoche: $5.000</option>
+                                                    <option value="melipeuco">Melipeuco: $14.000</option> -->
+                                                    <option value="Pucón">Pucon: $35.000</option>
+                                                    <option value="Quepe">Quepe: $75.000</option>
+                                                    <option value="Temuco">Temuco: $100.000</option>
+                                                    <option value="Villarrica">Villarrica: $20.000</option>
+                                                </optgroup>
+                                            </select>
+                                        </li>
+                                        <li class="botones-li">
+                                            <!-- <button type="button" onclick="document.getElementById('id02').style.display='none'"
+                                                class="qtsbtn">Generar cotizacion</button> -->
+                                                <button type="submit" class="iniciabtn">Crear Cotizaci&oacute;n</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- FIN CONTENIDO DEL MODAL-->
 
 
         <div class="footer">

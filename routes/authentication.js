@@ -135,20 +135,48 @@ router.post('/chgPassword', async(req, res, next) => {
 });
 
 router.post('/cotizacion', async (req, res) => {
-   
- /* const filename = `cotizacionn`+${Date.now()}+`.pdf` */
-    /* const doc = new PDF({bufferPages: true});
-   
-    const filename = 'cotizacion.pdf'
-    const stream   = res.writeHead(200, {
-        'Content-Type': 'application/pdf',
-        'Content-disposition': 'attachment;filename=pdfarchivo'
-    });
- 
 
-    doc.on( 'data', (data) => {stream.write(data)});
-    doc.on( 'end', () => {stream.end()}); */
+    const { id_proyecto1} = req.body; 
+    const { city_select } = req.body;
+    const {radio_install } = req.body;
+
+    city_value  = req.body;
+    basic_price = 2500000;
+    console.log("--------------------------------------------------------------")
+    console.log("---"+radio_install+"---")
+    console.log(id_proyecto1);
+    console.log(city_select);
+    console.log(city_value);
+    console.log("--------------------------------------------------------------")
+    // Identificamos la ciudad seleccionada y damos valor dependiendo el caso
+    switch (city_select) {
+        case "Villarrica":
+            city_value = 20000;
+            console.log(city_value);
+          break;
+        case "Temuco":
+            city_value = 100000;
+            console.log(city_value);
+          break;
+        case "Quepe":
+            city_value = 75000;
+            console.log(city_value);
+          break;
+        case "Pucón":
+        city_value = 35000;
+        console.log(city_value);
+          break;
+        default:
+            console.log("No se ha seleccionado una ciudad");
+          break;
+      }
+
+      final_price = Intl.NumberFormat('de-DE').format(basic_price+city_value);
+       // Damos formato al valor de la ciudad seleccionada 
+      city_value = Intl.NumberFormat('de-DE').format(city_value);
      
+      
+    res.render('quotePDF.html', {city_select,city_value,final_price});
 
 });
 router.get('/Proyect.html/:id', async (req, res) => {

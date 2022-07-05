@@ -1,24 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<!doctype html>
-    <html>
-       <head>
-            <meta charset="utf-8">
-            <title>PDF Result Template</title>
-            <style>
-                h1 {
-                    color: green;
-                }
-            </style>
-        </head>
-        <body>
-            <div id="pageHeader" style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">
-                <p>Anartz - Ejemplo de cabecera en HTML PDF</p>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/main.css">
+    <style>
+        table {
+  border-collapse: collapse;
+  border: 2px solid rgb(200,200,200);
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+}
+
+td, th {
+  border: 1px solid rgb(190,190,190);
+  padding: 10px 20px;
+}
+
+th {
+  background-color: rgb(235,235,235);
+}
+
+td {
+  text-align: center;
+}
+
+tr:nth-child(even) td {
+  background-color: rgb(250,250,250);
+}
+
+tr:nth-child(odd) td {
+  background-color: rgb(245,245,245);
+}
+
+caption {
+  padding: 10px;
+}
+
+
+        </style>
+</head>
+
+<body>
+
+    <div class="topnav">
+        <div>
+            <img src="/logos/logo.png" class="logo">
+            <h1 class="title">Pozos Pehuenco</h1>
+        </div>
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label for="menu__toggle" class="menu__btn">
+                <span></span>
+            </label>
+            <ul class="menu__box">
+                <li><a class="menu__item" href="Home.html">Inicio</a></li>
+                <% if(user) {%>
+                    <li><a class="menu__item" href="Profile.html">Perfil</a></li>
+                    <li><a class="menu__item" href="Myprojects.html">Mis Proyectos</a></li> 
+                <%} else { %>
+                    <li class="menu-login">
+                    
+                        <ul>
+                            <li>
+                                <button onclick="document.getElementById('id01').style.display='block'">Login</button>
+                            </li>
+                            <li>
+                                <button onclick="document.getElementById('id02').style.display='block'">Registrate</button>
+                            </li>
+                        </ul>
+    
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+
+    <div class="quotes">
+        <form class="qts-content" action="/" method="">
+            <div>
+                <h2 class="qts">Cotizaci&oacute;n </h2>
+                <p>Cotizaci&oacute;n con precios aproximados</p>
+                <p>Ciudad seleccionada : <%= city_select %> </p>
             </div>
-            <div id="pageFooter" style="border-top: 1px solid #ddd; padding-top: 5px;">
-                <p style="color: #666; width: 70%; margin: 0; padding-bottom: 5px; text-align: let; font-family: sans-serif; font-size: .65em; float: left;"><a href="https://anartz-mugika.com" target="_blank">https://anartz-mugika.com</a></p>
-                <p style="color: #666; margin: 0; padding-bottom: 5px; text-align: right; font-family: sans-serif; font-size: .65em">Página {{page}} de {{pages}}</p>
+            <div class="box-qts">
+                <table id="" >
+                    <tr>
+                      <th>Item Cotizado</th>
+                      <th>Cantidad</th>
+                      <th>Precio Total</th>
+                    </tr>
+                    <tr>
+                      <td>
+                        <table>
+                          <tr>Tubo negro 5 pulgadas</tr>
+                        </table>
+                      </td>
+                      <td>5</td>
+                      <td>$1.000.000</td>
+                    </tr>
+                    <tr>
+                      <td>Bomba sumergible 0,75 hp</td>
+                      <td>1</td>
+                      <td>$300.000</td>
+                    </tr>
+                    <tr>
+                        <td>Corona o Zapata</td>
+                        <td>1</td>
+                        <td>$200.000</td>
+                    </tr>
+                    <tr>
+                        <td>Tubo hidráulico de 32 mm</td>
+                        <td>6</td>
+                        <td>$120.000</td>
+                    </tr>
+                    <tr>
+                        <td>Petróleo y otros</td>
+                        <td></td>
+                        <td>$100.000</td>
+                    </tr>
+                    <tr>
+                        <td>Mano de obra</td>
+                        <td></td>
+                        <td>$780.000</td>
+                    </tr>
+                    <tr>
+                        <td>Tarifa por distancia (<%= city_select %>)</td>
+                        <td></td>
+                        <td>$<%= city_value %></td>
+                    </tr>
+                    <tr>
+                        <td>Precio Final</td>
+                        <td></td>
+                        <td>$<%= final_price %></td>
+                    </tr>
+                  </table>
             </div>
-            <h1>Título en el PDF creado con el paquete html-pdf</h1>
-            <p>Generando un PDF con un HTML sencillo</p>
-        </body>
-    </html>
+            <div style="margin-top: 2rem">
+                <script>
+                    document.write('<a class="" href="' + document.referrer + '"><button type="button" class="cancel-btn">Volver</button></a>');
+                  </script>
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <div class="footer">
+        <div class="footer-right">
+            <div class="map" id="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12352.200385644215!2d-72.23857895424698!3d-39.28711441428641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9614623c8e00fe6f%3A0xe7812f04b9706fcc!2sVillarrica%2C%20Araucania!5e0!3m2!1sen!2scl!4v1654918726427!5m2!1sen!2scl"
+                    width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <div class="footer-left">
+            <div class="contacto">
+                <h4>Cont&aacute;ctanos en nuestras redes sociales</h4>
+                <ul>
+                    <li>
+                        <p>Facebook</p>
+                        <a href="http://www.facebook.com/">
+                            <img src="/logos/PngItem_5134688.png" alt="facebook" class="rs-icon">
+                        </a>
+                    </li>
+                    <li>
+                        <p>Whatsapp</p>
+                        <a href="https://www.whatsapp.com/">
+                            <img src="/logos/PngItem_1139665.png" alt="whatsapp" class="rs-icon">
+                        </a>
+                    </li>
+                    <li>
+                        <p>Twitter</p>
+                        <a href="https://www.twitter.com/">
+                            <img src="/logos/PngItem_4834.png" alt="twitter" class="rs-icon">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-full">
+            <p>Copyright 2022 Pozos Pehuenco</p>
+        </div>
+    </div>
+    <script type="text/javascript" src="/js/uwu.js">
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
