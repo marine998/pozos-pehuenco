@@ -7,14 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="icon" href="/logos/logo.png">
 </head>
 
-<body>
+<body style="background-color: rgba(200, 217, 223, 0.885); ">
 
     <div class="topnav">
         <div>
-            <h1>Pozos Pehuenco</h1>
+            <img src="/logos/logo.png" class="logo">
+            <h1 class="title">Pozos Pehuenco</h1>
         </div>
         <div class="hamburger-menu">
             <input id="menu__toggle" type="checkbox" />
@@ -23,20 +25,25 @@
             </label>
             <ul class="menu__box">
                 <li><a class="menu__item" href="Home.html">Inicio</a></li>
-                <li><a class="menu__item" href="Profile.html">Perfil</a></li>
-                <li><a class="menu__item" href="quotes.html">Cotizaciones</a></li>
-                <li><a class="menu__item" href="Myprojects.html">Mis Proyectos</a></li>
-                <li class="menu-login">
-                    <ul>
-                        <li>
-                            <button onclick="document.getElementById('id01').style.display='block'">Login</button>
-                        </li>
-                        <li>
-                            <button onclick="document.getElementById('id02').style.display='block'">Registrate</button>
-                        </li>
-                    </ul>
+                <li><a class="menu__item" onclick="document.getElementById('id017').style.display='block'">Cotizaciones</a></li>
 
-                </li>
+                <% if(user) {%>
+                    <li><a class="menu__item" href="Profile.html">Perfil</a></li>
+                    <li><a class="menu__item" href="Myprojects.html">Mis Proyectos</a></li> 
+                <%} else { %>
+                    <li class="menu-login">
+                    
+                        <ul>
+                            <li>
+                                <button onclick="document.getElementById('id01').style.display='block'">Login</button>
+                            </li>
+                            <li>
+                                <button onclick="document.getElementById('id02').style.display='block'">Registrate</button>
+                            </li>
+                        </ul>
+    
+                    </li>
+                <% } %>
             </ul>
         </div>
     </div>
@@ -106,6 +113,10 @@
             title="Close Modal">&times;</span>
 
         <!-- CONTENIDO DEL MODAL REGISTRO -->
+<<<<<<< HEAD
+=======
+
+>>>>>>> bab840495dfebf7d426dfa5e85c43f1ba96fe9b8
         <form class="modal-content animate" action="/signup" method="POST">
             <div class="container">
                 <ul>
@@ -147,6 +158,67 @@
             </div>
         </form>
     </div>
+    <!-- MODAL DE COTIZACION -->
+
+    <div id="id017" class="modal">
+        <span onclick="document.getElementById('id017').style.display='none'" class="close"
+            title="Close Modal">&times;</span>
+
+        <!-- CONTENIDO DEL MODAL-->
+        <div class="quotes">
+            <form class="qts-content" action="/cotizacion" method="POST">
+                <div>
+                    <h2 class="qts">Cotizaciones</h2>
+                </div>
+                <div class="box-qts">
+                    <ul>
+                        <li class="input">
+                            <fieldset>
+                                <legend>Elija que desea instalar</legend>
+                                <label for="basic">Instalacion b&aacute;sica</label>
+                                <input type="radio" id="radio_install" name="radio_install" value="b">
+                                
+                            </fieldset>
+                        </li>
+                        
+
+                        <li class="input">
+                            <fieldset>
+                                <label for="advance" class="margin-top: 25px">Instalacion Avanzada</label>
+                                <input type="radio" id="radio_install" name="radio_install" value="a">
+                            </fieldset>
+                            
+                                <input type="hidden" id="city_value" name="city_value" value="0">
+                        </li>
+
+                        <li>
+                            <label for="city-select">Elija su punto mas cercano:</label>
+                            <select id="city-select" name="city_select">
+                                <optgroup label="--Por favor elija su punto mas cercano--">
+<!--                                                     <option value="carahue">Carahue: $27.000</option>
+                                    <option value="cunco">Cunco: $7.500</option>
+                                    <option value="curarrehue">Curarrehue: $5.000</option>
+                                    <option value="freire">Freire: $4.000</option>
+                                    <option value="loncoche">Loncoche: $5.000</option>
+                                    <option value="melipeuco">Melipeuco: $14.000</option> -->
+                                    <option value="Pucón">Pucon: $35.000</option>
+                                    <option value="Quepe">Quepe: $75.000</option>
+                                    <option value="Temuco">Temuco: $100.000</option>
+                                    <option value="Villarrica">Villarrica: $20.000</option>
+                                </optgroup>
+                            </select>
+                        </li>
+                        <li class="botones-li">
+                            <!-- <button type="button" onclick="document.getElementById('id02').style.display='none'"
+                                class="qtsbtn">Generar cotizacion</button> -->
+                                <button type="submit" class="iniciabtn">Crear Cotizaci&oacute;n</button>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- FIN CONTENIDO DEL MODAL-->
 
     <!-- Contenedor SL-->
 
@@ -155,39 +227,40 @@
         <!-- -->
         <div class="mySlides fade">
             <div class="numbertext">1 / 6</div>
-            <img src="/img/well 01.png" style="width: 100%;">
-            <div class="text">hola</div>
+            <img src="/img/en_terreno.jpg" style="height: 36rem;width: 83%; margin-left: 7rem; ">
+            <div class="text"></div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">2 / 6</div>
-            <img src="/img/well 02.png" style="width: 100%;">
-            <div class="text">hola</div>
+            <img src="/img/carrusel_2.jpg" style="height: 36rem;width: 83%; margin-left: 7rem; ">
+            <div class="text"></div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">3 / 6</div>
-            <img src="/img/well 03.png" style="width: 100%;">
-            <div class="text">hola</div>
+            <img src="/img/carrusel_3.jpg" style="height: 36rem;width: 83%; margin-left: 7rem; ">
+            <div class="text"></div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">4 / 6</div>
-            <img src="/img/well 04.png" style="width: 100%;">
-            <div class="text">hola</div>
+            <img src="/img/carrusel_4.jpg" style="height: 36rem;width: 83%; margin-left: 7rem; ">
+            <div class="text"></div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">5 / 6</div>
-            <img src="/img/well 05.png" style="width: 100%;">
-            <div class="text">hola</div>
+            <img src="/img/carrusel_5.jpg" style="height: 36rem;width: 83%; margin-left: 7rem; ">
+            <div class="text"></div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">6 / 6</div>
-            <img src="/img/well 06.png" style="width: 100%;">
-            <div class="text">hola</div>
+            <img src="/img/carrusel_6.jpg" style="height: 36rem;width: 83%; margin-left: 7rem; ">
+            <div class="text"></div>
         </div>
+        
 
         <!-- Botones siguiente y anterior -->
         <a class="prev" onclick="plusSlides(-1)">&#10094</a>
@@ -208,36 +281,77 @@
     <div class="row">
         <div class="left-column">
             <div class="card-menu">
-                <h2>Proyecto X</h2>
-                <h5>Instalacion ...</h5>
-                <div class="image">
-                    <img src="/img/Pozo-n1.png" alt="Pozo-n1" style="width: 100%">
+                <h2>Perforaci&oacute;n, pozo en Ñuble Terminado 27/07/22</h2>
+                <div class="" style="align-content: center; margin-left: 5rem">
+                    <video width="390" height="490" controls >
+                        <source src="/vid/pozo_nuble.mp4" type="video/mp4" >
+                        Your browser does not support the video tag.
+                    </video>
+                    <img src="/img/Pozo1.jpg" alt="Pozo-n1" style="width:390px;height:490px; margin-left: 1rem;
+                     -ms-grid-row-align: start; margin-top: 1rem;">
+                   
                 </div>
-                <p>Se hizo una instalacion ...</p>
+
+                <p style="font-size: 20px; background-color: rgba(188, 222, 231, 0.379); margin-top: 1rem; ">En la localidad de Ñuble a 25 km de Villarrica , 
+                    se perforó en terreno agrícola, caudal de agua de 50 
+                    litros por minuto aprox. (bomba de agua de 0,75hp) primeros nueve metros 
+                    tierra, luego arcilla y material de greda gris normalmente 
+                    encontrado en orillas de rio o fondos marinos, finalmente se encuentra piedra y 
+                    el color del agua se ve mas limpio, al llegar al acueducto empieza a salir el 
+                    chorro de agua , llegando a los 33 metros de profundidad brindando un buen caudal.</p>
             </div>
             <div class="card-menu">
-                <h2>Proyecto X</h2>
-                <h5>Instalacion ...</h5>
-                <div class="image">
-                    <img src="/img/Pozo-n1.png" alt="Pozo-n2" style="width: 100%;">
+                <h2>Perforaci&oacute;n, pozo en Puc&oacute;n con prueba de agua 1/06/22</h2>
+
+                <div class="" style="align-content: center; margin-left: 5rem">
+                    
+                    <video width="390" height="490" controls>
+                        <source src="/vid/prueba_de_agua_pucon.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                      <img src="/img/pozo_pucon.jpg" alt="Pozo-n1" style="width:390px;height:490px; margin-left: 1rem;
+                     -ms-grid-row-align: start; margin-top: 1rem;">
+                
+                    <p style="font-size: 20px; background-color: rgba(188, 222, 231, 0.379); margin-top: 1rem; ">En la localidad de Ñuble a 25 km de Villarrica , 
+                        Trabajo echo en las cercanias de Puc&oacute;n, buen caudal de agua, 40
+                        En esta ocasi&oacute;n se encontr&oacute; material volc&aacute;nico terreno dif&iacute;cil pero finalmente
+                        se logr&oacute; concretar una prueba de agua de 3 horas de flujo de agua continuo.
+                    </p>
                 </div>
-                <p>Se hizo una instalacion ...</p>
+           
             </div>
         </div>
         <div class="right-column">
             <div class="card-right">
-                <h2>Quienes somos</h2>
-                <div class="img">
+                <h2>Qui&eacute;nes somos</h2>
+                <div class="">
                     <a href="About.html">
-                        <img src="/img/Trabajadores.jpg" alt="" style="width: 100%;">
+                        <img src="/img/quienes_somos.jpg" alt="" style="width: 100%;  ">
                     </a>
                 </div>
+                <div class="" style="background-color: rgba(206, 223, 227, 0.427); margin-top: 2rem;">
+                    <p style="margin-top: 1rem; font-size: 20px; ">
+                        Somos una empresa de la novena región,trabajamos en la confección de pozos profundos y la extracción de agua,
+                         amamos nuestro trabajo y nos enorgullecemos brindar nuestra ayuda al público en las zonas donde mas lo necesitan.
+                    </p>
+           
+                    <p style="margin-top: 1rem; font-size: 20px;">
+                        Prestamos servicio de estudio geológico para la detección de variables de agua de cordillera o mar. Conociendo 
+                        tipos de suelos y enfrentandonos diariamente a todo tipo de terrenos desde 
+                        tierra vegetal, hasta roca madre y residuos volcanicos... <a href="About.html">Ver más</a>
+                    </p>
+                    <p style="margin-top: 1rem; ">
+                    </p>
+                    <p style="margin-top: 1rem; background-color: rgba(188, 222, 231, 0.379);">
+                    </p>
+                </div>
+             
             </div>
             <div class="card-right">
                 <h2>Socios</h2>
                 <div class="img">
                     <a href="Partners.html">
-                    <img src="/img/Trabajadores.jpg" alt="" style="width: 100%;">
+                    <img src="/logos/logo.png" alt="" style="width: 100%;">
                     </a>
                 </div>
             </div>
@@ -254,7 +368,7 @@
         </div>
         <div class="footer-left">
             <div class="contacto">
-                <h4>Contactanos en nuestras redes sociales</h4>
+                <h4>Cont&aacute;ctanos en nuestras redes sociales</h4>
                 <ul>
                     <li>
                         <p>Facebook</p>
@@ -277,6 +391,8 @@
                 </ul>        
             </div>
         </div>
+        
+
         <div class="footer-full">
             <p>Copyright 2022 Pozos Pehuenco</p>
         </div>

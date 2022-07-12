@@ -8,13 +8,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/main.css" />
+    <link rel="icon" href="/logos/logo.png">
 </head>
 
-<body>
+<body style="background-color: rgba(200, 217, 223, 0.885); ">
 
     <div class="topnav">
         <div>
-            <h1>Pozos Pehuenco</h1>
+            <img src="/logos/logo.png" class="logo">
+            <h1 class="title">Pozos Pehuenco</h1>
         </div>
         <div class="hamburger-menu">
             <input id="menu__toggle" type="checkbox" />
@@ -26,144 +28,90 @@
                 <li><a class="menu__item" href="Profile.html">Perfil</a></li>
                 <li><a class="menu__item" href="quotes.html">Cotizaciones</a></li>
                 <li><a class="menu__item" href="Myprojects.html">Mis Proyectos</a></li>
-                <li class="menu-login">
-                    <ul>
-                        <li>
-                            <button onclick="document.getElementById('id01').style.display='block'">Login</button>
-                        </li>
-                        <li>
-                            <button onclick="document.getElementById('id02').style.display='block'">Registrate</button>
-                        </li>
-                    </ul>
-                    
-                </li>
             </ul>
         </div>
     </div>
-    <div id="id01" class="modal">
-        <span onclick="document.getElementById('id01').style.display='none'" class="close"
-            title="Close Modal">&times;</span>
-
-        <!-- CONTENIDO DEL MODAL-->
-        <form class="modal-content animate" action="/action_page.php">
-            <div class="container">
-                <ul>
-                    <li>
-                        <label for="uname">Usuario</label>
-                        <input type="text" name="usame requiered" placeholder="Ingrese usuario">
-                    </li>
-                    <li>
-                        <label for="psw">Contraseña</label>
-                        <input type="password" name="psw" placeholder="Ingrese contraseña">
-                    </li>
-                    <li class="remember-li">  
-                        <div>
-                            <label for="remember" class="remember-lbl">Recuérdame</label>
-                            <input type="checkbox" checked="checked" name="remember" class="remember-chk">
-                        </div>     
-                        <div>
-                            <span class="psw">¿Olvidaste <a href="#">tu contraseña</a>?</span>
-                        </div>
-                    </li>
-                    <li class="botones-li">
-                        <button type="button" onclick="document.getElementById('id01').style.display='none'"
-                        class="cancelbtn">Cancelar</button>
-                        <button type="submit" class="iniciabtn">Iniciar Sesión</button>
-                    </li>
-                </ul>                
-            </div>
-
-            <div class="container">
-                
-            </div>
-        </form>
-    </div>
-    <div id="id02" class="modal">
-        <span onclick="document.getElementById('id02').style.display='none'" class="close"
-            title="Close Modal">&times;</span>
-
-        <!-- CONTENIDO DEL MODAL-->
-        <form class="modal-content animate" action="/action_page.php">
-            <div class="container">
-                <ul>
-                    <li>
-                        <label for="uname">Usuario</label>
-                        <input type="text" name="usame requiered" placeholder="Ingrese usuario">
-                    </li>
-                    <li>
-                        <label for="psw">Contraseña</label>
-                        <input type="password" name="psw" placeholder="Ingrese contraseña">
-                    </li>
-                    <li class="remember-li">
-                        <div>
-                            <label for="remember" class="remember-lbl">Recuérdame</label>
-                            <input type="checkbox" checked="checked" name="remember" class="remember-chk">
-                        </div>
-                    </li>
-                    <li class="botones-li">
-                        <button type="button" onclick="document.getElementById('id02').style.display='none'"
-                    class="cancelbtn">Cancelar</button>
-                        <button type="submit" class="iniciabtn">Iniciar Sesión</button>
-                    </li>
-                </ul>
-            </div>
-        </form>
-    </div>
-
 
     <div>
-        <div>
+        <div style="margin-top: -3rem">
             <h1 class="about">QUIENES SOMOS?</h1>
         </div>
-        <div class="img-about">
-            <img src="/img/well 07.png" alt="Pozo-n1">
+        <div class="slideshow-container" style="margin-bottom: 2rem">
+
+            <!-- -->
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 6</div>
+                <img src="/img/carrusel_1.jpg" style="height: 34rem;width: 82%; margin-left: 7rem; ">
+                <div class="text"></div>
+            </div>
+    
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 6</div>
+                <img src="/img/carrusel_2.jpg" style="height: 34rem;width: 82%; margin-left: 7rem; ">
+                <div class="text"></div>
+            </div>
+    
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 6</div>
+                <img src="/img/carrusel_3.jpg" style="height: 34rem;width: 82%; margin-left: 7rem; ">
+                <div class="text"></div>
+            </div>
+    
+            <div class="mySlides fade">
+                <div class="numbertext">4 / 6</div>
+                <img src="/img/carrusel_4.jpg" style="height: 34rem;width: 82%; margin-left: 7rem; ">
+                <div class="text"></div>
+            </div>
+    
+            <div class="mySlides fade">
+                <div class="numbertext">5 / 6</div>
+                <img src="/img/carrusel_5.jpg" style="height: 34rem;width: 82%; margin-left: 7rem; ">
+                <div class="text"></div>
+            </div>
+    
+            <div class="mySlides fade">
+                <div class="numbertext">6 / 6</div>
+                <img src="/img/carrusel_6.jpg" style="height: 34rem;width: 82%; margin-left: 7rem; ">
+                <div class="text"></div>
+            </div>
+            
+    
+            <!-- Botones siguiente y anterior -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+            <a class="next" onclick="plusSlides(1)">&#10095</a>
+    
         </div>
+
         <div class="card texto">
-            <p class="about-text">
-                When Mr. Bilbo Baggins of Bag End announced that he
-                would shortly be celebrating his eleventy-first birthday with
-                a party of special magnificence, there was much talk and
-                excitement in Hobbiton.
-                Bilbo was very rich and very peculiar, and had been the
-                wonder of the Shire for sixty years, ever since his remarkable
-                disappearance and unexpected return. The riches he had
-                brought back from his travels had now become a local legend,
-                and it was popularly believed, whatever the old folk might
-                say, that the Hill at Bag End was full of tunnels stuffed with
-                treasure. And if that was not enough for fame, there was also
-                his prolonged vigour to marvel at. Time wore on, but it
-                seemed to have little effect on Mr. Baggins. At ninety he was
-                much the same as at fifty. At ninety-nine they began to call
-                him well-preserved; but unchanged would have been nearer the
-                mark. There were some that shook their heads and thought
-                this was too much of a good thing; it seemed unfair that
-                anyone should possess (apparently) perpetual youth as well
-                as (reputedly) inexhaustible wealth.
-                It will have to be paid for, they said. It isnt natural, and
-                trouble will come of it!.
+            <p class="about-text" style="font-size: 21px;">
+                <b>Somos una empresa de la novena región</b> ,trabajamos en la 
+                confección de pozos profundos y la extracción de agua, amamos 
+                nuestro trabajo y nos enorgullecemos brindar nuestra ayuda al 
+                público en las zonas donde mas lo necesitan.
                 <br>
-                But so far trouble had not come; and as Mr. Baggins was
-                generous with his money, most people were willing to forgive
-                him his oddities and his good fortune. He remained
-                on visiting terms with his relatives (except, of course, the
-                Sackville-Bagginses), and he had many devoted admirers
-                among the hobbits of poor and unimportant families. But he
-                had no close friends, until some of his younger cousins began
-                to grow up.
+
+                Gracias a nuestros años de experiencia podemos distinguir las 
+                distintas caracteristicas de napas y grietas fluviales. <br>
+                Prestamos servicio de estudio geológico para la detección de 
+                variables de agua de cordillera o mar. Conociendo tipos de suelos y 
+                enfrentandonos diariamente a todo tipo de terrenos desde tierra vegetal, 
+                hasta roca madre y residuos volcanicos.
                 <br>
-                The eldest of these, and Bilbos favourite, was young Frodo
-                Baggins. When Bilbo was ninety-nine he adopted Frodo as
-                his heir, and brought him to live at Bag End; and the hopes of
-                the Sackville-Bagginses were finally dashed. Bilbo and Frodo
-                happened to have the same birthday, September 22nd. You
-                had better come and live here, Frodo my lad, said Bilbo
-                one day; and then we can celebrate our birthday-parties
-                comfortably together. At that time Frodo was still in his
-                tweens, as the hobbits called the irresponsible twenties
-                between childhood and coming of age at thirty-three.
+                Nuestros pozos cuentan con la característica que no se secan.
+
+                <br>
+                trabajamos con bombas de agua de 0.75 hp, que dependiendo del tipo de cañeria 
+                que se entube podran dar un mayor caudal, desde cañerias de media pulgada 
+                o pulgada y media son capaces de bombear desde 45 a 60 litros por minuto.
+                <br>
+                Al finalizar el pozo este queda instalado y listo para que el cliente 
+                conecte todos los artefactos para que lleve el agua al lugar donde se necesita.
+                El pozo es entubado en x de 5 pulgadas y de 5mm a 3mm de grosor 
+                y lo x esto entubado con tubo hidraulico o PPR de 32 segun el terreno.
             </p>
         </div>
     </div>
+
 
     <div class="footer">
         <div class="footer-right">
@@ -176,7 +124,7 @@
         </div>
         <div class="footer-left">
             <div class="contacto">
-                <h4>Contactanos en nuestras redes sociales</h4>
+                <h4>Cont&aacute;ctanos en nuestras redes sociales</h4>
                 <ul>
                     <li>
                         <p>Facebook</p>

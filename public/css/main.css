@@ -6,7 +6,7 @@ body {
 }
 
 .row {
-    width: 100%;
+    width: 105%;
     display: flex;
     flex-wrap: wrap;
     margin: 1em 0 2em 0;
@@ -468,6 +468,7 @@ body {
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
+    background-color: rgba(69, 68, 68, 0.604);
 }
 
 /* posicion de los botones siguentes */
@@ -558,7 +559,7 @@ body {
 }
 
 .img-about {
-    max-width: 100%;
+    max-width: 90%;
     margin-top: 15px;
 }
 
@@ -643,7 +644,7 @@ body {
     max-width: 100%;
     width: 72.8%;
     height: 94vh;
-    padding: 8.5em 5em 5em 5em;
+    padding: 6.5em 5em 5em 5em;
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -713,20 +714,22 @@ body {
 
 .right-column {
     display: flex;
+    align-self: flex-start;
     max-width: 33.2%;
     margin: 0;
     padding: 0;
     flex-wrap: wrap;
     justify-content: flex-start;
-    width: 100%;
+    width: 90%;
+    margin-right: -14rem;
 }
 
 .card-right {
     background-color: #0d6378c5;
     border-radius: 5px;
     border: 2px solid #0d637857;
-    width: 100%;
-    padding: 20px;
+    width: 80%;
+    padding: 10px;
 }
 
 .card-right:first-of-type  {
@@ -1154,4 +1157,182 @@ input.input {
     font-weight: normal;
     width: 100%;
     margin: 0;
+}
+/*  Projects    */
+
+.card-projects {
+    background-color: #0d63783a;
+    border: 2px solid white;
+    border-radius: 5px;
+    max-width: 100%;
+    width: 760px;
+    padding: 30px;
+    display: block;
+    justify-content: center;
+    
+}
+
+.form-projects {
+    padding: 0 15%;
+}
+
+li.li-projects {
+    justify-content: space-between;
+    width: 100%;
+    border-top: 1px solid #f7f7f7;
+    padding: 2em 0 0 0;
+    margin-top: 1em;
+}
+
+li.li-projects label {
+    font-size: 20px;
+    font-weight: bold;
+    color: #424242;
+}
+
+.card-projects li{
+    padding-bottom: 5px;
+    display: flex;
+    list-style: none;
+}
+
+.card-projects li input {
+    border-radius: 5px;
+    border: 1.5px solid black;
+}
+
+.card-projects li input:hover{
+    opacity: 0.8;
+}
+
+.archives-projects {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.archives{
+    display: block;
+    background-color: #ffffff99;
+    border: 1.5px solid black;
+    border-radius: 5px;
+    width: 200px;
+    height: 200px;
+    margin-right: 70px;
+    padding: 5 5 5 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.pdf{
+    display: block;
+    background-color: #ffffff99;
+    border: 1.5px solid black;
+    border-radius: 5px;
+    width: 200px;
+    height: 200px;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 5 5 5 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.iconsp {
+    max-width: 100%;
+    max-height: 100%;
+    width: 150px;
+    height: 150px;
+}
+
+.editbtn{
+    background-color: #0d6278;
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    padding: 5px 15px;
+    width: auto;
+    margin: 0 13.9em 0 0;
+    text-align: center;
+}
+
+.cancel-btn {
+    background-color: #0d6278;
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    padding: 5px 15px;
+    width: auto;
+    margin: 0 13.9em 0 0;
+    text-align: center;
+}
+
+.card-projects .container ul li button {
+    background-color: #0d6278;
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    padding: 5px 15px;
+    width: auto;
+    margin: 0 13.9em 0 0;
+    text-align: center;
+}
+
+li.btn-projects button:hover {
+    background-color: #063a47;
+}
+
+li.btn-projects {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+    border-top: 1px solid #f7f7f7;
+    padding: 2em 0 0 0;
+    margin-top: 4em;
+}
+
+li.btn-projects button {
+    min-width: 150px;
+    margin: 0;
+    text-align: center;
+    justify-content: center;
+}
+
+li.btn-projects button.cancelbtn {
+    width: 150px;
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px solid #0d6278;
+    color: #0d6278;
+}
+
+li.btn-projects button.cancelbtn:hover {
+    background-color: #b4e6f3;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+.logo {
+    margin-top: -12px;
+    height: 90%;
+}
+
+h1.title {
+    display: initial;
+    color: #ffffff;
 }

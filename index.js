@@ -46,7 +46,7 @@ app.use(passport.session());
 
 // Global Variables
 app.use((req, res, next) => {
-    app.locals.sucess = req.flash('success');
+    app.locals.success = req.flash('success');
     app.locals.message = req.flash('message');
     app.locals.user = req.user;
     next();
