@@ -14,7 +14,9 @@
 
     <div class="topnav">
         <div>
-            <img src="/logos/logo.png" class="logo">
+            <a href="../Home.html">
+                <img src="/logos/logo.png" class="logo">
+            </a>
             <h1 class="title">Pozos Pehuenco</h1>
         </div>
         <div class="hamburger-menu">
@@ -24,23 +26,28 @@
             </label>
             <ul class="menu__box">
                 <% if(user) {%>
-                    <script>
-                        document.write('<li><a class="menu__client" href="' + document.referrer+'">Mis Proyectos</a></li>');
-                      </script>
-                <%} else { %>
-                    <li class="menu-login">
-                    
-                        <ul>
-                            <li>
-                                <button onclick="document.getElementById('id01').style.display='block'">Login</button>
-                            </li>
-                            <li>
-                                <button onclick="document.getElementById('id02').style.display='block'">Registrate</button>
-                            </li>
-                        </ul>
-    
-                    </li>
-                <% } %>
+                    <li><a class="menu__item" href="../Home.html">Inicio</a></li>
+                    <li><a class="menu__item" href="../Profile.html">Perfil</a></li>
+                    <li><a class="menu__item" href="../quotes.html">Cotizaciones</a></li>
+                    <li><a class="menu__item" href="../Myprojects.html">Mis Proyectos</a></li>
+                    <li><a class="menu__item" href="../logout"><img src="/icons/exit.png">Cerrar Sesión</a></li>
+                    <%} else { %>
+                        <li class="menu-login">
+
+                            <ul>
+                                <li>
+                                    <button
+                                        onclick="document.getElementById('id01').style.display='block'">Login</button>
+                                </li>
+                                <li>
+                                    <button
+                                        onclick="document.getElementById('id02').style.display='block'">Registrate</button>
+                                </li>
+                            </ul>
+
+                        </li>
+                        <% } %>
+
 
 
             </ul>
@@ -121,11 +128,10 @@
         <div class="left-column-client">
             <div class="card-menu-client">
                 <ul class="menu-client">
-
-                    <script>
-                        document.write('<li><a class="menu__client" href="' + document.referrer+'">Mis Proyectos</a></li>');
-                      </script>
-
+                    <li><a class="menu__client" href="../Profile.html">Mi Perfil</a></li>
+                    <li><a class="menu__client" href="../ChgPassword.html">Cambiar clave</a></li>
+                    <li><a class="menu__client" href="../Myprojects.html">Mis Proyectos</a></li>
+                    <li><a class="menu__client" href="../logout">Cerrar Sesión</a></li>
                 </ul>
                 
             </div>
