@@ -153,18 +153,12 @@
                     </div>
                     <div class="pdf">
                         <p>Cotizacion</p>
-                            
-                            
-                     
                         <button type="submit"onclick="document.getElementById('id016').style.display='block'"
-                        class=""><img src="/icons/addPublication.png" alt="" class="iconsp" ></button>
-          
-                        
+                        class="iconsp"><img src="/icons/addPublication.png" alt="" class="iconsp" ></button>
                     </div>
                 </div>
                 <div class="cont-projects">
                     <li class="btn-projects">
-                        
                         <script>
                             document.write('<a class="" href="' + document.referrer + '"><button type="button" class="cancel-btn">Cancelar</button></a>');
                           </script>
@@ -173,8 +167,7 @@
                         <form class="" action="/deleteProyect" method="POST">
                             <div>
                                 <input type="hidden" id="id_proyecto" name="id_proyecto" value="<%= proyect[0].id_proyecto %>">
-
-                                <button type="submit" class="editbtn">delete</button>
+                                <button type="submit" class="editbtn">Borrar</button>
                             </div>
                         </form>
                     </li>

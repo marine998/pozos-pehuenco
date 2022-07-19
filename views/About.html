@@ -25,13 +25,207 @@
             </label>
             <ul class="menu__box">
                 <li><a class="menu__item" href="Home.html">Inicio</a></li>
-                <li><a class="menu__item" href="Profile.html">Perfil</a></li>
-                <li><a class="menu__item" href="quotes.html">Cotizaciones</a></li>
-                <li><a class="menu__item" href="Myprojects.html">Mis Proyectos</a></li>
+                <li><a class="menu__item"
+                        onclick="document.getElementById('id017').style.display='block'">Cotizaciones</a></li>
+
+                <% if(user) {%>
+                    <li><a class="menu__item" href="Profile.html">Perfil</a></li>
+                    <li><a class="menu__item" href="Myprojects.html">Mis Proyectos</a></li>
+                    <li><a class="menu__item" href="/logout"><img src="/icons/exit.png">Cerrar Sesión</a></li>
+                    <%} else { %>
+                        <li class="menu-login">
+
+                            <ul>
+                                <li>
+                                    <button
+                                        onclick="document.getElementById('id01').style.display='block'">Login</button>
+                                </li>
+                                <li>
+                                    <button
+                                        onclick="document.getElementById('id02').style.display='block'">Registrate</button>
+                                </li>
+                            </ul>
+
+                        </li>
+                        <% } %>
             </ul>
         </div>
     </div>
+    <% if(message=='El usuario ingresado no existe' ) {%>
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-md-4 mx-auto">
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <%= message %>
 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% }%>
+            <% if(message=='Contraseña incorrecta' ) {%>
+                <div class="container p-4">
+                    <div class="row">
+                        <div class="col-md-4 mx-auto">
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <%= message %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% }%>
+                    <div id="id01" class="modal">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                            title="Close Modal">&times;</span>
+
+                        <!-- CONTENIDO DEL MODAL-->
+                        <form class="modal-content animate" action="/signin" method="POST">
+                            <div class="container">
+                                <ul>
+                                    <li>
+                                        <label for="uname">Usuario</label>
+                                        <input type="text" name="correo_electronico_login"
+                                            placeholder="Ingrese usuario">
+                                    </li>
+                                    <li>
+                                        <label for="psw">Contraseña</label>
+                                        <input type="password" name="contrasena_login" placeholder="Ingrese contraseña">
+                                    </li>
+                                    <li class="remember-li">
+                                        <div>
+                                            <label for="remember" class="remember-lbl">Recuérdame</label>
+                                            <input type="checkbox" checked="checked" name="remember"
+                                                class="remember-chk">
+                                        </div>
+                                        <div>
+                                            <span class="psw">¿Olvidaste <a href="#">tu contraseña</a>?</span>
+                                        </div>
+                                    </li>
+                                    <li class="botones-li">
+                                        <button type="button"
+                                            onclick="document.getElementById('id01').style.display='none'"
+                                            class="cancelbtn">Cancelar</button>
+                                        <button type="submit" class="iniciabtn">Iniciar Sesión</button>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="container">
+
+                            </div>
+                        </form>
+
+                    </div>
+                    <div id="id02" class="modal">
+                        <span onclick="document.getElementById('id02').style.display='none'" class="close"
+                            title="Close Modal">&times;</span>
+
+                        <!-- CONTENIDO DEL MODAL REGISTRO -->
+
+                        <form class="modal-content animate" action="/signup" method="POST">
+                            <div class="container">
+                                <ul>
+                                    <li>
+                                        <label for="uname">Ingrese su nombre</label>
+                                        <input type="text" name="nombre" placeholder="Ingrese nombre">
+                                    </li>
+                                    <li>
+                                        <label for="lname">Ingrese su apellido</label>
+                                        <input type="text" name="apellido" placeholder="Ingrese apellido">
+                                    </li>
+                                    <li>
+                                        <label for="psw">Ingrese su contraseña</label>
+                                        <input type="password" name="contrasena" placeholder="Ingrese contraseña">
+                                    </li>
+                                    <li>
+                                        <label for="psw">Repita su contraseña</label>
+                                        <input type="password" name="psw" placeholder="Repita contraseña">
+                                    </li>
+                                    <li>
+                                        <label for="mail">Ingrese su Email</label>
+                                        <input type="text" name="correo_electronico" placeholder="Ingrese mail">
+                                    </li>
+                                    <li>
+                                        <label for="phone">Ingrese su numero de Telefono</label>
+                                        <input type="text" name="numero_telefono" placeholder="Ingrese su numero">
+                                    </li>
+                                    <li>
+                                        <label for="dir">Ingrese su direccion</label>
+                                        <input type="text" name="direccion" placeholder="Ingrese su direccion">
+                                    </li>
+
+                                    <li class="botones-li">
+                                        <button type="button"
+                                            onclick="document.getElementById('id02').style.display='none'"
+                                            class="cancelbtn">Cancelar</button>
+                                        <button type="submit" class="iniciabtn">Registrarse</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </form>
+
+                    </div>
+                    <!-- MODAL DE COTIZACION -->
+
+                    <div id="id017" class="modal">
+                        <span onclick="document.getElementById('id017').style.display='none'" class="close"
+                            title="Close Modal">&times;</span>
+
+                        <!-- CONTENIDO DEL MODAL-->
+                        <div class="quotes">
+                            <form class="qts-content" action="/cotizacion" method="POST">
+                                <div>
+                                    <h2 class="qts">Cotizaciones</h2>
+                                </div>
+                                <div class="box-qts">
+                                    <ul>
+                                        <li class="input">
+                                            <fieldset>
+                                                <legend>Elija que desea instalar</legend>
+                                                <label for="basic">Instalacion b&aacute;sica</label>
+                                                <input type="radio" id="radio_install" name="radio_install" value="b">
+
+                                            </fieldset>
+                                        </li>
+
+
+                                        <li class="input">
+                                            <fieldset>
+                                                <label for="advance" class="margin-top: 25px">Instalacion
+                                                    Avanzada</label>
+                                                <input type="radio" id="radio_install" name="radio_install" value="a">
+                                            </fieldset>
+
+                                            <input type="hidden" id="city_value" name="city_value" value="0">
+                                        </li>
+
+                                        <li>
+                                            <label for="city-select">Elija su punto mas cercano:</label>
+                                            <select id="city-select" name="city_select">
+                                                <optgroup label="--Por favor elija su punto mas cercano--">
+                                                    <!--                                                     <option value="carahue">Carahue: $27.000</option>
+                                    <option value="cunco">Cunco: $7.500</option>
+                                    <option value="curarrehue">Curarrehue: $5.000</option>
+                                    <option value="freire">Freire: $4.000</option>
+                                    <option value="loncoche">Loncoche: $5.000</option>
+                                    <option value="melipeuco">Melipeuco: $14.000</option> -->
+                                                    <option value="Pucón">Pucon: $35.000</option>
+                                                    <option value="Quepe">Quepe: $75.000</option>
+                                                    <option value="Temuco">Temuco: $100.000</option>
+                                                    <option value="Villarrica">Villarrica: $20.000</option>
+                                                </optgroup>
+                                            </select>
+                                        </li>
+                                        <li class="botones-li">
+                                            <!-- <button type="button" onclick="document.getElementById('id02').style.display='none'"
+                                class="qtsbtn">Generar cotizacion</button> -->
+                                            <button type="submit" class="iniciabtn">Crear Cotizaci&oacute;n</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
     <div>
         <div style="margin-top: -3rem">
             <h1 class="about">QUIENES SOMOS?</h1>
