@@ -14,7 +14,7 @@
 
     <div class="topnav">
         <div>
-            <a href="Home.html">
+            <a href="../Home.html" class="logo-hide">
                 <img src="/logos/logo.png" class="logo">
             </a>
             <h1 class="title">Pozos Pehuenco</h1>
@@ -29,6 +29,7 @@
                 <li><a class="menu__item" href="Profile.html">Perfil</a></li>
                 <li><a class="menu__item" href="quotes.html">Cotizaciones</a></li>
                 <li><a class="menu__item" href="Myprojects.html">Mis Proyectos</a></li>
+                <li><a class="menu__item" href="/logout"><img src="/icons/exit.png">Cerrar Sesión</a></li>
             </ul>
         </div>
     </div>
@@ -63,9 +64,9 @@
                 <div class="column projects">
                     <div class="card projects">
                         
-                        <button >
+                        <button class="icon-folder">
                             <a href="Proyect.html/<%= proyects[i].id_proyecto %>">
-                                <img src="/icons/add_folder.png" alt="" >
+                                <img src="/icons/folder.png" class="icon-folder" alt="" >
                                 
                             </a>
                             <p><%= proyects[i].nombre_proyecto %> </p>
@@ -80,7 +81,7 @@
 
             <div class="column projects">
                 <div class="card projects">
-                    <button onclick="document.getElementById('id04').style.display='block'">
+                    <button onclick="document.getElementById('id04').style.display='block'" class="icon-folder">
                         <img src="/icons/add_folder.png" alt="">
                         <p>Nuevo Proyecto</p>
                     </button>

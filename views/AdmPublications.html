@@ -49,6 +49,76 @@
             </div>
         </div>
     </div>
+    <div id="id05" class="modal">
+        <span onclick="document.getElementById('id05').style.display='none'" class="close"
+            title="Close Modal">&times;</span>
+
+        <!-- CONTENIDO DEL MODAL-->
+        <form class="modal-content animate" action="/action_page.php">
+            <div class="container">
+                <ul>
+                    <li>
+                        <label for="tituloproyecto01">Titulo proyecto</label>
+                        <input type="text" name="" placeholder="Titulo">
+                    </li>
+                    <li>
+                        <label for="desc01">Descripcion</label>
+                        <input type="text" name="" placeholder="Ingrese Descripcion">
+                    </li>
+                    <li>
+                        <label for="img-display-proyect-02">Suba video para el titulo</label>
+                        <input onchange="validateSize(this)" type="file" id="file" value="Subir video">
+                    </li>
+                    <li>
+                        <label for="img-display-proyect-01">Suba imagen para el titulo</label>
+                        <input onchange="validateSize(this)" type="file" id="file" value="subir imagen" placeholder="Subir foto">
+                    </li>
+
+                    <li class="botones-li">
+                        <button type="button" onclick="document.getElementById('id05').style.display='none'"
+                            class="cancelbtn">Cancelar</button>
+                        <button type="submit" class="iniciabtn">Guardar</button>
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </div>
+
+    <div id="id06" class="modal">
+        <span onclick="document.getElementById('id06').style.display='none'" class="close"
+            title="Close Modal">&times;</span>
+
+        <!-- CONTENIDO DEL MODAL-->
+        <form class="modal-content animate" action="/action_page.php">
+            <div class="container">
+                <ul>
+                    <li>
+                        <label for="tituloproyecto02">Titulo proyecto</label>
+                        <input type="text" name="" placeholder="Titulo">
+                    </li>
+                    <li>
+                        <label for="desc02">Descripcion</label>
+                        <input type="text" name="" placeholder="Ingrese Descripcion">
+                    </li>
+                    <li>
+                        <label for="img-display-proyect-02">Suba video para el titulo</label>
+                        <input onchange="validateSize(this)" type="file" id="file" value="Subir video">
+                    </li>
+                    <li>
+                        <label for="img-display-proyect-02">Suba imagen para el titulo</label>
+                        <input onchange="validateSize(this)" type="file" id="file" value="Subir imagen">
+                    </li>
+
+                    <li class="botones-li">
+                        <button type="button" onclick="document.getElementById('id06').style.display='none'"
+                            class="cancelbtn">Cancelar</button>
+                        <button type="submit" class="iniciabtn">Guardar</button>
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </div>
+
    
     <script type = "text/javascript" src = "/js/uwu.js">
 

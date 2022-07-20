@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,10 +10,13 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="icon" href="/logos/logo.png">
 </head>
+
 <body>
     <div class="topnav">
         <div>
-            <img src="/logos/logo.png" class="logo">
+            <a href="../Home.html" class="logo-hide">
+                <img src="/logos/logo.png" class="logo">
+            </a>
             <h1 class="title">Pozos Pehuenco</h1>
         </div>
         <div class="hamburger-menu">
@@ -22,107 +26,303 @@
             </label>
             <ul class="menu__box">
                 <li><a class="menu__item" href="Home.html">Inicio</a></li>
-                <li><a class="menu__item" href="Profile.html">Perfil</a></li>
-                <li><a class="menu__item" href="quotes.html">Cotizaciones</a></li>
-                <li><a class="menu__item" href="Myprojects.html">Mis Proyectos</a></li>
+                <li><a class="menu__item"
+                        onclick="document.getElementById('id017').style.display='block'">Cotizaciones</a></li>
+
+                <% if(user) {%>
+                    <li><a class="menu__item" href="Profile.html">Perfil</a></li>
+                    <li><a class="menu__item" href="Myprojects.html">Mis Proyectos</a></li>
+                    <li><a class="menu__item" href="/logout"><img src="/icons/exit.png">Cerrar Sesión</a></li>
+                    <%} else { %>
+                        <li class="menu-login">
+
+                            <ul>
+                                <li>
+                                    <button
+                                        onclick="document.getElementById('id01').style.display='block'">Login</button>
+                                </li>
+                                <li>
+                                    <button
+                                        onclick="document.getElementById('id02').style.display='block'">Registrate</button>
+                                </li>
+                            </ul>
+
+                        </li>
+                        <% } %>
             </ul>
         </div>
     </div>
+    <% if(message=='El usuario ingresado no existe' ) {%>
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-md-4 mx-auto">
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <%= message %>
 
-    <div class="row">
-        <div class="column">
-            <div class="card">
-                <img src="/logos/starlink.png" alt="Internet" style="width: 100%;">
-                <div class="container">
-                    <h2 class="blc-h2">Starlink</h2>
-                    <p class="title"></p>
-                    <a href="https://www.starlink.com">
-                        <p><button class="button">Ir a su pagina</button></p>
-                    </a>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="column">
-            <div class="card">
-                <img src="/logos/morcas.png" alt="Recicle" style="width: 100%;">
-                <div class="container">
-                    <h2 class="blc-h2">Morcas</h2>
-                    <p class="title"></p>
-                    <a href="https://www.morcas.cl/">
-                        <p><button class="button">Ir a su pagina</button></p>
-                    </a>
+        <% }%>
+            <% if(message=='Contraseña incorrecta' ) {%>
+                <div class="container p-4">
+                    <div class="row">
+                        <div class="col-md-4 mx-auto">
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <%= message %>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="column">
-            <div class="card">
-                <img src="/logos/directv.png" alt="TV" style="width: 100%;">
-                <div class="container">
-                    <h2 class="blc-h2">Directv</h2>
-                    <p class="title"></p>
-                    <a href="https://www.directv.cl/">
-                        <p><button class="button">Ir a su pagina</button></p>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="column">
-            <div class="card">
-                <img src="/logos/ecer.png" alt="TV" style="width: 100%;">
-                <div class="container">
-                    <h2 class="blc-h2">ECER</h2>
-                    <p class="title"></p>
-                    <a href="http://www.ecer.cl/">
-                        <p><button class="button">Ir a su pagina</button></p>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="footer">
-        <div class="footer-right">
-            <div class="map" id="map">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12352.200385644215!2d-72.23857895424698!3d-39.28711441428641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9614623c8e00fe6f%3A0xe7812f04b9706fcc!2sVillarrica%2C%20Araucania!5e0!3m2!1sen!2scl!4v1654918726427!5m2!1sen!2scl"
-                    width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
-        <div class="footer-left">
-            <div class="contacto">
-                <h4>Cont&aacute;ctanos en nuestras redes sociales</h4>
-                <ul>
-                    <li>
-                        <p>Facebook</p>
-                        <a href="http://www.facebook.com/">
-                            <img src="/logos/PngItem_5134688.png" alt="facebook" class="rs-icon">
-                        </a>
-                    </li>
-                    <li>
-                        <p>Whatsapp</p>
-                        <a href="https://www.whatsapp.com/">
-                            <img src="/logos/PngItem_1139665.png" alt="whatsapp" class="rs-icon">
-                        </a>
-                    </li>
-                    <li>
-                        <p>Twitter</p>
-                        <a href="https://www.twitter.com/">
-                            <img src="/logos/PngItem_4834.png" alt="twitter" class="rs-icon">
-                        </a>
-                    </li>
-                </ul>        
-            </div>
-        </div>
-        <div class="footer-full">
-            <p>Copyright 2022 Pozos Pehuenco</p>
-        </div>
-    </div>
-    <script type = "text/javascript" src = "/js/uwu.js">
+                <% }%>
+                    <div id="id01" class="modal">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                            title="Close Modal">&times;</span>
 
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
-        </script>
+                        <!-- CONTENIDO DEL MODAL-->
+                        <form class="modal-content animate" action="/signin" method="POST">
+                            <div class="container">
+                                <ul>
+                                    <li>
+                                        <label for="uname">Usuario</label>
+                                        <input type="text" name="correo_electronico_login"
+                                            placeholder="Ingrese usuario">
+                                    </li>
+                                    <li>
+                                        <label for="psw">Contraseña</label>
+                                        <input type="password" name="contrasena_login" placeholder="Ingrese contraseña">
+                                    </li>
+                                    <li class="remember-li">
+                                        <div>
+                                            <label for="remember" class="remember-lbl">Recuérdame</label>
+                                            <input type="checkbox" checked="checked" name="remember"
+                                                class="remember-chk">
+                                        </div>
+                                        <div>
+                                            <span class="psw">¿Olvidaste <a href="#">tu contraseña</a>?</span>
+                                        </div>
+                                    </li>
+                                    <li class="botones-li">
+                                        <button type="button"
+                                            onclick="document.getElementById('id01').style.display='none'"
+                                            class="cancelbtn">Cancelar</button>
+                                        <button type="submit" class="iniciabtn">Iniciar Sesión</button>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="container">
+
+                            </div>
+                        </form>
+
+                    </div>
+                    <div id="id02" class="modal">
+                        <span onclick="document.getElementById('id02').style.display='none'" class="close"
+                            title="Close Modal">&times;</span>
+
+                        <!-- CONTENIDO DEL MODAL REGISTRO -->
+
+                        <form class="modal-content animate" action="/signup" method="POST">
+                            <div class="container">
+                                <ul>
+                                    <li>
+                                        <label for="uname">Ingrese su nombre</label>
+                                        <input type="text" name="nombre" placeholder="Ingrese nombre">
+                                    </li>
+                                    <li>
+                                        <label for="lname">Ingrese su apellido</label>
+                                        <input type="text" name="apellido" placeholder="Ingrese apellido">
+                                    </li>
+                                    <li>
+                                        <label for="psw">Ingrese su contraseña</label>
+                                        <input type="password" name="contrasena" placeholder="Ingrese contraseña">
+                                    </li>
+                                    <li>
+                                        <label for="psw">Repita su contraseña</label>
+                                        <input type="password" name="psw" placeholder="Repita contraseña">
+                                    </li>
+                                    <li>
+                                        <label for="mail">Ingrese su Email</label>
+                                        <input type="text" name="correo_electronico" placeholder="Ingrese mail">
+                                    </li>
+                                    <li>
+                                        <label for="phone">Ingrese su numero de Telefono</label>
+                                        <input type="text" name="numero_telefono" placeholder="Ingrese su numero">
+                                    </li>
+                                    <li>
+                                        <label for="dir">Ingrese su direccion</label>
+                                        <input type="text" name="direccion" placeholder="Ingrese su direccion">
+                                    </li>
+
+                                    <li class="botones-li">
+                                        <button type="button"
+                                            onclick="document.getElementById('id02').style.display='none'"
+                                            class="cancelbtn">Cancelar</button>
+                                        <button type="submit" class="iniciabtn">Registrarse</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </form>
+
+                    </div>
+                    <!-- MODAL DE COTIZACION -->
+
+                    <div id="id017" class="modal">
+                        <span onclick="document.getElementById('id017').style.display='none'" class="close"
+                            title="Close Modal">&times;</span>
+
+                        <!-- CONTENIDO DEL MODAL-->
+                        <div class="quotes">
+                            <form class="qts-content" action="/cotizacion" method="POST">
+                                <div>
+                                    <h2 class="qts">Cotizaciones</h2>
+                                </div>
+                                <div class="box-qts">
+                                    <ul>
+                                        <li class="input">
+                                            <fieldset>
+                                                <legend>Elija que desea instalar</legend>
+                                                <label for="basic">Instalacion b&aacute;sica</label>
+                                                <input type="radio" id="radio_install" name="radio_install" value="b">
+
+                                            </fieldset>
+                                        </li>
+
+
+                                        <li class="input">
+                                            <fieldset>
+                                                <label for="advance" class="margin-top: 25px">Instalacion
+                                                    Avanzada</label>
+                                                <input type="radio" id="radio_install" name="radio_install" value="a">
+                                            </fieldset>
+
+                                            <input type="hidden" id="city_value" name="city_value" value="0">
+                                        </li>
+
+                                        <li>
+                                            <label for="city-select">Elija su punto mas cercano:</label>
+                                            <select id="city-select" name="city_select">
+                                                <optgroup label="--Por favor elija su punto mas cercano--">
+                                                    <!--                                                     <option value="carahue">Carahue: $27.000</option>
+                                    <option value="cunco">Cunco: $7.500</option>
+                                    <option value="curarrehue">Curarrehue: $5.000</option>
+                                    <option value="freire">Freire: $4.000</option>
+                                    <option value="loncoche">Loncoche: $5.000</option>
+                                    <option value="melipeuco">Melipeuco: $14.000</option> -->
+                                                    <option value="Pucón">Pucon: $35.000</option>
+                                                    <option value="Quepe">Quepe: $75.000</option>
+                                                    <option value="Temuco">Temuco: $100.000</option>
+                                                    <option value="Villarrica">Villarrica: $20.000</option>
+                                                </optgroup>
+                                            </select>
+                                        </li>
+                                        <li class="botones-li">
+                                            <!-- <button type="button" onclick="document.getElementById('id02').style.display='none'"
+                                class="qtsbtn">Generar cotizacion</button> -->
+                                            <button type="submit" class="iniciabtn">Crear Cotizaci&oacute;n</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="column">
+                            <div class="card">
+                                <img src="/logos/starlink.png" alt="Internet" style="width: 100%;">
+                                <div class="container">
+                                    <h2 class="blc-h2">Starlink</h2>
+                                    <p class="title"></p>
+                                    <a href="https://www.starlink.com">
+                                        <p><button class="button">Ir a su pagina</button></p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="card">
+                                <img src="/logos/morcas.png" alt="Recicle" style="width: 100%;">
+                                <div class="container">
+                                    <h2 class="blc-h2">Morcas</h2>
+                                    <p class="title"></p>
+                                    <a href="https://www.morcas.cl/">
+                                        <p><button class="button">Ir a su pagina</button></p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="card">
+                                <img src="/logos/directv.png" alt="TV" style="width: 100%;">
+                                <div class="container">
+                                    <h2 class="blc-h2">Directv</h2>
+                                    <p class="title"></p>
+                                    <a href="https://www.directv.cl/">
+                                        <p><button class="button">Ir a su pagina</button></p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="card">
+                                <img src="/logos/ecer.png" alt="TV" style="width: 100%;">
+                                <div class="container">
+                                    <h2 class="blc-h2">ECER</h2>
+                                    <p class="title"></p>
+                                    <a href="http://www.ecer.cl/">
+                                        <p><button class="button">Ir a su pagina</button></p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <div class="footer-right">
+                            <div class="map" id="map">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12352.200385644215!2d-72.23857895424698!3d-39.28711441428641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9614623c8e00fe6f%3A0xe7812f04b9706fcc!2sVillarrica%2C%20Araucania!5e0!3m2!1sen!2scl!4v1654918726427!5m2!1sen!2scl"
+                                    width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                        <div class="footer-left">
+                            <div class="contacto">
+                                <h4>Cont&aacute;ctanos en nuestras redes sociales</h4>
+                                <ul>
+                                    <li>
+                                        <p>Facebook</p>
+                                        <a href="http://www.facebook.com/">
+                                            <img src="/logos/PngItem_5134688.png" alt="facebook" class="rs-icon">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <p>Whatsapp</p>
+                                        <a href="https://www.whatsapp.com/">
+                                            <img src="/logos/PngItem_1139665.png" alt="whatsapp" class="rs-icon">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <p>Twitter</p>
+                                        <a href="https://www.twitter.com/">
+                                            <img src="/logos/PngItem_4834.png" alt="twitter" class="rs-icon">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer-full">
+                            <p>Copyright 2022 Pozos Pehuenco</p>
+                        </div>
+                    </div>
+                    <script type="text/javascript" src="/js/uwu.js">
+
+                    </script>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+                        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+                        crossorigin="anonymous">
+                        </script>
 </body>
 
 </html>
