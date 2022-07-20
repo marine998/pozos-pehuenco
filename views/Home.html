@@ -74,6 +74,77 @@
                             </div>
                         </div>
                     </div>
+                    </li>
+                    <li class="botones-li">
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                            class="cancelbtn">Cancelar</button>
+                        <button type="submit" class="iniciabtn">Iniciar Sesión</button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="container">
+
+            </div>
+        </form>
+    </div>
+    <div id="id02" class="modal">
+        <span onclick="document.getElementById('id02').style.display='none'" class="close"
+            title="Close Modal">&times;</span>
+
+        <!-- CONTENIDO DEL MODAL REGISTRO -->
+        <form class="modal-content animate" action="/signup" method="POST">
+            <div class="container">
+                <ul>
+                    <li>
+                        <label for="uname">Ingrese su nombre</label>
+                        <input type="text" name="nombre" placeholder="Ingrese nombre">
+                    </li>
+                    <li>
+                        <label for="lname">Ingrese su apellido</label>
+                        <input type="text" name="apellido" placeholder="Ingrese apellido">
+                    </li>
+                    <li>
+                        <label for="psw">Ingrese su contraseña</label>
+                        <input type="password" name="contrasena" placeholder="Ingrese contraseña">
+                    </li>
+                    <li>
+                        <label for="psw">Repita su contraseña</label>
+                        <input type="password" name="psw" placeholder="Repita contraseña">
+                    </li>
+                    <li>
+                        <label for="mail">Ingrese su Email</label>
+                        <input type="text" name="correo_electronico" placeholder="Ingrese mail">
+                    </li>
+                    <li>
+                        <label for="phone">Ingrese su numero de Telefono</label>
+                        <input type="text" name="numero_telefono" placeholder="Ingrese su numero">
+                    </li>
+                    <li>
+                        <label for="dir">Ingrese su direccion</label>
+                        <input type="text" name="direccion" placeholder="Ingrese su direccion">
+                    </li>
+                    
+                    <li class="botones-li">
+                        <button type="button" onclick="document.getElementById('id02').style.display='none'"
+                    class="cancelbtn">Cancelar</button>
+                        <button type="submit" class="iniciabtn">Registrarse</button>
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </div>
+    <!-- MODAL DE COTIZACION -->
+
+    <div id="id017" class="modal">
+        <span onclick="document.getElementById('id017').style.display='none'" class="close"
+            title="Close Modal">&times;</span>
+
+        <!-- CONTENIDO DEL MODAL-->
+        <div class="quotes">
+            <form class="qts-content" action="/cotizacion" method="POST">
+                <div>
+                    <h2 class="qts">Cotizaciones</h2>
                 </div>
                 <% }%>
                     <div id="id01" class="modal">

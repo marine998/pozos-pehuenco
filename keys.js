@@ -1,11 +1,10 @@
-//MySql local configuration
 module.exports = {
 
     database: {
-        host: 'localhost',
-        user: 'root',
-        password: '',
-        database: 'pozos_profundos_db'
+        host: 'us-cdbr-east-06.cleardb.net',
+        user: 'b303b96a4df0ba',
+        password: 'ff642c76',
+        database: 'heroku_1c890651db56eb0'
     }
     
 };

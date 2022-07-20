@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-
 const passport = require('passport');
 const pool = require('../database');
 const helpers = require('../lib/helpers');
@@ -42,7 +41,7 @@ router.post('/signin', (req, res, next) => {
 
     passport.authenticate('local.signin', {
         successRedirect: '/Profile.html',
-        failureRedirect: '/home.html',
+        failureRedirect: '/Home.html',
         failureFlash: true
     })(req,res, next);
 });
@@ -115,7 +114,6 @@ router.post('/updateProyect', async (req, res, next) => {
     res.redirect('/Myprojects.html');
 
 });
-
 
 router.post('/chgPassword', async(req, res, next) => {
 
@@ -222,6 +220,7 @@ router.get('/logoutadm', function(req, res, next) {
 
     });
 });
+
 
 
 
