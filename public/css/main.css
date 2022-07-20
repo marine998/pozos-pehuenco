@@ -1330,6 +1330,11 @@ li.btn-projects button.cancelbtn:hover {
 .logo {
     margin-top: -12px;
     height: 90%;
+
+}
+
+.logo-hide{
+    text-decoration: none;
 }
 
 h1.title {
