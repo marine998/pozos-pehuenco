@@ -22,27 +22,49 @@
     </div>
 
     <div>
-        <form action="" class="login-content">
+        <form class="login-content" action="/signinadm" method="POST">
             <div class="box-login">
                 <ul>
                     <li>
                         <label for="usameadm">Nombre de Usuario</label>
-                        <input type="text" placeholder="Ingrese Usuario">
+                        <input type="text" name="correo_electronico_login" placeholder="Ingrese Usuario">
                     </li>
                     <li>
                         <label for="pswadm">Clave</label>
-                        <input type="password" placeholder="Ingrese clave">
+                        <input type="password" name="contrasena_login" placeholder="Ingrese clave">
                     </li>
                     <li class="botones-li">
-                        <button type="button" class="cancelbtn">Cancelar</button>
-                        <a href="AdmMenu.html">
-                            <button type="button" class="iniciabtn">Iniciar Sesión</button>
+                        <a href="/Home.html">
+                            <button type="button" class="cancelbtn">Cancelar</button>
                         </a>
+                        <button type="submit" class="iniciabtn">Iniciar Sesión</button>
                     </li>
                 </ul>
             </div>
         </form>
     </div>
+<% if(message =='El usuario administrador ingresado no existe') {%>
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-md-4 mx-auto">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <%= message %>
+                </div>
+            </div>
+        </div>
+    </div>
+<% }%>
+<% if(message =='contraseña incorrecta o administrador no habilitado') {%>
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-md-4 mx-auto">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <%= message %>
+                </div>
+            </div>
+        </div>
+    </div>
+<% }%>
 
     <script type="text/javascript" src="/js/uwu.js">
     </script>

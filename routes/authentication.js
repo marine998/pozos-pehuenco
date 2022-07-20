@@ -19,6 +19,20 @@ router.post('/signup', passport.authenticate('local.signup', {
     failureFlash: true
 }));
 
+// SINGIN ADMIN
+router.get('/signinadm', (req, res) => {
+    res.render('/AdmLogin.html');
+});
+
+router.post('/signinadm', (req, res, next) => {
+
+    passport.authenticate('local.signinadm', {
+        successRedirect: '/AdmMenu.html',
+        failureRedirect: '/AdmLogin.html',
+        failureFlash: true
+    })(req,res, next);
+});
+
 // SINGIN
 router.get('/signin', (req, res) => {
     res.render('/home.html');
@@ -198,7 +212,16 @@ router.get('/logout', function(req, res, next) {
       res.redirect('/Home.html')
 
     });
-  });
+});
+
+//LOGOUT ADMIN
+router.get('/logoutadm', function(req, res, next) {
+    req.logout(function(err) {
+      if (err) { return next(err); }
+      res.redirect('/AdmLogin.html')
+
+    });
+});
 
 
 
